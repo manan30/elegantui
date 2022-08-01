@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "ESNext",
+    "incremental": true,
+    "skipLibCheck": true
+  },
+  "include": ["packages/*"],
+  "exclude": ["node_modules"]
+}
