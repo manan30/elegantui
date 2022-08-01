@@ -7,12 +7,19 @@
   ],
   "scripts": {},
   "devDependencies": {
-    "turbo": "latest"
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "prettier": "^2.7.1",
+    "turbo": "latest",
+    "typescript": "^4.7.4"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.8.0"
 }
