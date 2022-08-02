@@ -30,7 +30,7 @@
     "react": "16.x || 17.x || 18.x"
   },
   "scripts": {
-    "build:tailwind": "pnpm exec tailwindcss -i ./styles/input.css -o ./dist/styles.css",
-    "watch:tailwind": "pnpm exec tailwindcss -i ./styles/input.css -o ./dist/styles.css --watch"
+    "build:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css",
+    "watch:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css --watch"
   }
 }
