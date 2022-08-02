@@ -29,5 +29,8 @@
   "peerDependencies": {
     "react": "16.x || 17.x || 18.x"
   },
-  "scripts": {}
+  "scripts": {
+    "build:tailwind": "pnpm exec tailwindcss -i ./styles/input.css -o ./dist/styles.css",
+    "watch:tailwind": "pnpm exec tailwindcss -i ./styles/input.css -o ./dist/styles.css --watch"
+  }
 }
