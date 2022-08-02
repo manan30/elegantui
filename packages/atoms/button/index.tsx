@@ -1,3 +1,4 @@
+import React from 'react';
 import type { MouseEventHandler, ReactNode } from 'react';
 
 export type ButtonProps = {

@@ -1,3 +1,4 @@
+import React from 'react';
 import './global.css';
 
 import type { ReactNode } from 'react';
@@ -7,6 +8,7 @@ type AppProps = {
 };
 
 function App({ Component }: AppProps) {
+  // @ts-ignore
   return <Component />;
 }
 
