@@ -6,6 +6,7 @@
     "noFallthroughCasesInSwitch": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "noEmitOnError": true,
     "forceConsistentCasingInFileNames": true,

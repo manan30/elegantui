@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["commitlint", "elegantui", "tailwindcss"]
+  "cSpell.words": [
+    "commitlint",
+    "elegantui",
+    "preact",
+    "tailwindcss",
+    "vitebook"
+  ]
 }
