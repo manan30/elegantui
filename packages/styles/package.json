@@ -1,0 +1,26 @@
+{
+  "name": "@elegantui/styles",
+  "version": "0.0.0",
+  "description": "ElegantUI styles",
+  "keywords": [
+    "react",
+    "hooks",
+    "components",
+    "design",
+    "system"
+  ],
+  "homepage": "https://github.com/manan30/elegantui/packages/styles#readme",
+  "bugs": {
+    "url": "https://github.com/manan30/elegantui/issues",
+    "email": "mananjoshi1995@gmail.com"
+  },
+  "license": "MIT",
+  "author": "Manan Joshi <mananjoshi1995@gmail.com> (https://mananjoshi.me)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manan30/elegantui.git",
+    "directory": "packages/styles"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}
