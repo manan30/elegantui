@@ -8,6 +8,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier'
   ],
@@ -19,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     'no-console': 'error'
   }
