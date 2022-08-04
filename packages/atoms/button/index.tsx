@@ -4,24 +4,24 @@ import type { ReactNode, ButtonHTMLAttributes } from 'react';
 
 export type ButtonProps = {
   children: ReactNode;
-  appearance:
-    | 'default'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning'
-    | 'error';
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  color?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  appearance?: 'solid' | 'outline' | 'link' | 'ghost';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-function Button({ disabled, onClick, children }: ButtonProps) {
+function Button({
+  children,
+  color = 'default',
+  appearance = 'solid',
+  size = 'md',
+  ...rest
+}: ButtonProps) {
   return (
     <button
-      disabled={disabled}
-      onClick={onClick}
       className={tm(
-        'rounded-md bg-red-500 p-4 shadow-sm hover:shadow-md focus:shadow-md focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-1'
+        'rounded-md bg-primary p-4 font-semibold text-default shadow-sm transition-shadow duration-100 ease-in hover:shadow-md focus:shadow-md focus:outline-none focus:ring focus:ring-primary/75 focus:ring-offset-1'
       )}
+      {...rest}
     >
       {children}
     </button>

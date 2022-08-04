@@ -31,6 +31,7 @@
     "@vitebook/preact": "^0.100.5",
     "@vitebook/theme-default": "^0.100.5",
     "autoprefixer": "^10.0.0",
+    "clsx": "^1.2.1",
     "postcss": "^8.0.0",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",

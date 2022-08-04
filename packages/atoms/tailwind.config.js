@@ -3,7 +3,14 @@ module.exports = {
   content: ['./**/*.tsx'],
   theme: {
     extend: {
-      colors: {}
+      colors: {
+        default: '#EAEAEB',
+        primary: '#1e6091',
+        secondary: '#184e77',
+        success: '#37BE45',
+        error: '#cc001b',
+        warning: '#E7D24B'
+      }
     }
   },
   plugins: []
