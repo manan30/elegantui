@@ -20,8 +20,10 @@ function Button({
   variant = 'default',
   appearance = 'solid',
   size = 'md',
-  ...rest
+  ...remProps
 }: ButtonProps) {
+  const { disabled, className, ...rest } = remProps;
+
   const buttonSize = React.useMemo(() => {
     switch (size) {
       case 'sm':
@@ -29,12 +31,13 @@ function Button({
       case 'md':
         return 'p-4 font-medium text-med';
       case 'lg':
-        return 'p-6 font-semibold text-lg';
+        return 'p-6 font-semibold text-xl';
     }
   }, [size]);
 
   const buttonVariant = React.useMemo(() => {
     const baseVariantStyles = 'focus:ring focus:ring-offset-2 text-default';
+
     switch (variant) {
       case 'primary':
         return `${baseVariantStyles} bg-primary focus:ring-primary/75`;
@@ -51,13 +54,34 @@ function Button({
     }
   }, [variant]);
 
+  const buttonAppearance = React.useMemo(() => {
+    const currentButtonVariant = buttonVariant
+      .match(/bg-\S+\b/g)?.[0]
+      .split('-')[1];
+    const baseAppearanceStyles = `focus:ring-transparent focus:ring-offset-0 bg-transparent text-${currentButtonVariant}`;
+
+    switch (appearance) {
+      case 'solid':
+        return `rounded-md shadow-sm transition-shadow duration-100 ease-in hover:shadow-md focus:shadow-md`;
+      case 'outline':
+        return `${baseAppearanceStyles} rounded-md shadow-sm border border-${currentButtonVariant} border-[3px]`;
+      case 'link':
+        return `${baseAppearanceStyles} hover:underline focus:underline hover:underline-offset-1 focus:underline-offset-1`;
+      case 'ghost':
+        return baseAppearanceStyles;
+    }
+  }, [appearance, buttonVariant]);
+
   return (
     <button
       className={tm(
-        'rounded-md text-default shadow-sm transition-shadow duration-100 ease-in hover:shadow-md focus:shadow-md focus:outline-none',
+        'focus:outline-none',
         buttonSize,
         buttonVariant,
-        rest.disabled && 'cursor-default opacity-50'
+        buttonAppearance,
+        disabled &&
+          'under cursor-default opacity-50 hover:no-underline hover:shadow-none',
+        className
       )}
       {...rest}
     >
