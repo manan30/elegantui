@@ -1,15 +1,28 @@
 import React from 'react';
-import type { MouseEventHandler, ReactNode } from 'react';
+import { twMerge as tm } from 'tailwind-merge';
+import type { ReactNode, ButtonHTMLAttributes } from 'react';
 
 export type ButtonProps = {
-  disabled?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
   children: ReactNode;
-};
+  appearance:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'error';
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-function Button({ disabled = false, onClick, children }: ButtonProps) {
+function Button({ disabled, onClick, children }: ButtonProps) {
   return (
-    <button disabled={disabled} onClick={onClick}>
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={tm(
+        'rounded-md bg-red-500 p-4 shadow-sm hover:shadow-md focus:shadow-md focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-1'
+      )}
+    >
       {children}
     </button>
   );
