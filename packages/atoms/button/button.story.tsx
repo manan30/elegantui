@@ -15,11 +15,12 @@ export const __pageMeta: PageMeta = {
 };
 
 function ButtonStory() {
-  const [title, setTitle] = useState('Click Me');
+  const [title, setTitle] = useState('');
   const [size, setSize] = useState<ButtonProps['size']>('md');
   const [appearance, setAppearance] =
     useState<ButtonProps['appearance']>('solid');
   const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -33,8 +34,9 @@ function ButtonStory() {
                 disabled={disabled}
                 variant={variant.toLowerCase() as ButtonProps['variant']}
                 appearance={appearance}
+                loading={loading}
               >
-                {title}
+                {title.length ? title : variant}
               </Button>
             </Variant>
           );
@@ -93,6 +95,17 @@ function ButtonStory() {
             type='checkbox'
             checked={disabled}
             onChange={(e) => setDisabled(e.target.checked)}
+          />
+        </div>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
+        >
+          <label>Loading</label>
+          <input
+            style={{ marginLeft: '0.5rem' }}
+            type='checkbox'
+            checked={loading}
+            onChange={(e) => setLoading(e.target.checked)}
           />
         </div>
       </ControlsAddon>
