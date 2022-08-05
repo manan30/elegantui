@@ -53,6 +53,7 @@
     "lint:fix": "eslint --fix '**/*.{ts,tsx}'",
     "format:check": "prettier --check '**/*.{ts,tsx,css}'",
     "format:fix": "prettier --write '**/*.{ts,tsx,css}'",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "vitebook:dev": "vitebook dev",
     "vitebook:build": "vitebook build",
     "vitebook:preview": "vitebook preview"

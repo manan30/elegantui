@@ -6,6 +6,7 @@
     "tailwindcss",
     "tsbuildinfo",
     "tsup",
+    "typecheck",
     "vitebook"
   ]
 }

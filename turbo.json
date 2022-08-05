@@ -4,6 +4,7 @@
     "lint:check": { "outputs": [] },
     "lint:fix": { "outputs": [] },
     "format:check": { "outputs": [] },
-    "format:fix": { "outputs": [] }
+    "format:fix": { "outputs": [] },
+    "typecheck": { "outputs": [] }
   }
 }
