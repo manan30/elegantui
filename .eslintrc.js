@@ -21,6 +21,11 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {
     'no-console': 'error'
   }

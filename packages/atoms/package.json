@@ -49,6 +49,10 @@
     "build:packages": "tsup index.ts",
     "build:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css",
     "watch:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css --watch",
+    "lint:check": "eslint --max-warnings 0 '**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix '**/*.{ts,tsx}'",
+    "format:check": "prettier --check '**/*.{ts,tsx,css}'",
+    "format:fix": "prettier --write '**/*.{ts,tsx,css}'",
     "vitebook:dev": "vitebook dev",
     "vitebook:build": "vitebook build",
     "vitebook:preview": "vitebook preview"
