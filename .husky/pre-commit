@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "check lint and prettify standards"
+pnpm lint:check && pnpm format:check
