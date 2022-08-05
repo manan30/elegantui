@@ -1,6 +1,4 @@
-# @elegantui/atoms
-
-ElegantUI Button component
+# ElegantUI Button component
 
 ## Installation
 
