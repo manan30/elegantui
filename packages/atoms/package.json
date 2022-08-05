@@ -21,6 +21,9 @@
     "url": "https://github.com/manan30/elegantui.git",
     "directory": "packages/atoms"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@preact/preset-vite": "^2.3.0",
