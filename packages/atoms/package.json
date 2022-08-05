@@ -1,6 +1,6 @@
 {
   "name": "@elegantui/atoms",
-  "version": "0.0.0-beta.1",
+  "version": "0.0.0-beta.2",
   "description": "ElegantUI base components",
   "keywords": [
     "react",
@@ -32,6 +32,10 @@
       "require": "./dist/index.js",
       "import": "./dist/esm/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./dist/styles.css": {
+      "import": "./dist/styles.css",
+      "require": "./dist/styles.css"
     }
   },
   "devDependencies": {
