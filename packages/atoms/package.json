@@ -31,7 +31,6 @@
     "@vitebook/preact": "^0.100.5",
     "@vitebook/theme-default": "^0.100.5",
     "autoprefixer": "^10.0.0",
-    "clsx": "^1.2.1",
     "postcss": "^8.0.0",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
@@ -46,6 +45,8 @@
     "react": "16.x || 17.x || 18.x"
   },
   "scripts": {
+    "build": "pnpm build:packages && pnpm build:tailwind",
+    "build:packages": "tsup index.ts",
     "build:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css",
     "watch:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css --watch",
     "vitebook:dev": "vitebook dev",

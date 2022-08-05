@@ -7,12 +7,14 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "noEmit": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "noEmitOnError": true,
     "forceConsistentCasingInFileNames": true,
     "target": "ESNext",
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
   "include": ["packages/**/*"],
   "exclude": ["node_modules"]

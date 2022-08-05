@@ -4,6 +4,8 @@
     "elegantui",
     "preact",
     "tailwindcss",
+    "tsbuildinfo",
+    "tsup",
     "vitebook"
   ]
 }
