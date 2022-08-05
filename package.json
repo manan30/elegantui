@@ -46,15 +46,15 @@
   "packageManager": "pnpm@7.8.0",
   "lint-staged": {
     "*.ts": [
-      "pnpm lint-check --",
-      "pnpm format-check --"
+      "pnpm lint:check --",
+      "pnpm format:check --"
     ],
     "*.tsx": [
-      "pnpm lint-check --",
-      "pnpm format-check --"
+      "pnpm lint:check --",
+      "pnpm format:check --"
     ],
     "*.css": [
-      "pnpm format-check --"
+      "pnpm format:check --"
     ]
   },
   "scripts": {
