@@ -1,11 +1,19 @@
 # @elegantui/atoms
 
-ElegantUI base components
+ElegantUI Button component
 
 ## Installation
 
 ```bash
 npm i @elegantui/atoms
+```
+
+## Usage
+
+```js
+import { Button } from '@elegantui/atoms';
+
+<Button />;
 ```
 
 ## License
