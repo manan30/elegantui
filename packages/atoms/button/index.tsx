@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
 import type { ReactNode, ButtonHTMLAttributes } from 'react';
 
