@@ -111,7 +111,7 @@ function Button({
           ></path>
         </svg>
       ) : null}
-      <div>{children}</div>
+      {loading ? <div>{children}</div> : children}
     </button>
   );
 }
