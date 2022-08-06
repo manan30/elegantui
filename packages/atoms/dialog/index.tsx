@@ -23,8 +23,8 @@ function Dialog({
   dismissHandler,
   children,
   title,
-  disableCloseOnEsc = true,
-  disableCloseButton = false,
+  disableCloseOnEsc,
+  disableCloseButton,
   size = 'md'
 }: DialogProps) {
   return (
