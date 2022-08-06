@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Transition, Dialog as HUIDialog } from '@headlessui/react';
+import { twMerge as tm } from 'tailwind-merge';
 import Button from '../button';
 
 import type { ReactNode } from 'react';
@@ -11,6 +12,7 @@ export type DialogProps = {
   title?: string;
   disableCloseOnEsc?: boolean;
   disableCloseButton?: boolean;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -22,7 +24,8 @@ function Dialog({
   children,
   title,
   disableCloseOnEsc = true,
-  disableCloseButton = false
+  disableCloseButton = false,
+  size = 'md'
 }: DialogProps) {
   return (
     <Transition appear show={open} as={React.Fragment}>
@@ -55,7 +58,15 @@ function Dialog({
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <HUIDialog.Panel className='w-full max-w-lg transform overflow-hidden rounded-xl bg-default p-6 text-left align-middle shadow-xl transition-all'>
+              <HUIDialog.Panel
+                className={tm(
+                  'w-full max-w-lg transform overflow-hidden rounded-xl bg-default px-6 py-4 text-left align-middle shadow-xl transition-all',
+                  size === 'sm' && 'max-w-sm',
+                  size === 'md' && 'max-w-md',
+                  size === 'lg' && 'max-w-lg',
+                  size === 'xl' && 'max-w-xl'
+                )}
+              >
                 {title ? (
                   <div className='flex w-full items-center'>
                     <HUIDialog.Title className='text-lg font-medium leading-6 text-secondary lg:text-xl'>
