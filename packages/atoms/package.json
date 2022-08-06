@@ -40,9 +40,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
+    "@headlessui/react": "^1.6.6",
     "@preact/preset-vite": "^2.3.0",
     "@types/node": "^18.6.3",
     "@types/react": "17.0.48",
+    "@types/react-dom": "17.0.17",
     "@vitebook/client": "^0.100.5",
     "@vitebook/core": "^0.100.5",
     "@vitebook/preact": "^0.100.5",
@@ -52,6 +54,7 @@
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
     "react": "17.0.2",
+    "react-dom": "17.0.2",
     "svelte": "^3.49.0",
     "tailwind-merge": "^1.5.1",
     "tailwindcss": "^3.1.7",
@@ -59,7 +62,8 @@
     "vite": "^3.0.0"
   },
   "peerDependencies": {
-    "react": "16.x || 17.x || 18.x"
+    "react": "16.x || 17.x || 18.x",
+    "react-dom": "16.x || 17.x || 18.x"
   },
   "scripts": {
     "build": "pnpm build:packages && pnpm build:types && pnpm build:tailwind",
