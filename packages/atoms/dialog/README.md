@@ -11,11 +11,15 @@ npm i @elegantui/atoms
 ```js
 import { Dialog } from '@elegantui/atoms';
 
-<Dialog open>
-  <Dialog.Title>Dialog Title</Dialog.Title>
-  <Dialog.Content>
-    <p>Add some content</p>
-  </Dialog.Content>
+<Dialog
+  open={open}
+  dismissHandler={() => setOpen(false)}
+  title='Dialog title'
+  disableCloseOnEsc={false}
+  disableCloseButton={false}
+  size='lg'
+>
+  <p>Dialog content</p>
 </Dialog>;
 ```
 
