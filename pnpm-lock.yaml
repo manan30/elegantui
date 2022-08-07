@@ -49,7 +49,7 @@ importers:
     dependencies:
       next: 12.2.4_sfoxds7t5ydpegc3knd667wn6m
       nextra: 1.1.0_z3yk7izmwsoahwplgcmcxkn2yu
-      nextra-theme-docs: 1.2.6_4u6zbjx6dbt7fttn6k4hvqzi7a
+      nextra-theme-docs: 1.2.6_uukmyp77ldorbgmzegw66xwu3i
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       webpack: 5.74.0
@@ -1046,7 +1046,6 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom/17.0.17:
     resolution: {integrity: sha512-VjnqEmqGnasQKV0CWLevqMTXBYG9GbwuE6x3VetERLh0cq2LTptFE73MrQi2S7GkKXCf2GgwItB/melLnxfnsg==}
@@ -1060,7 +1059,6 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.0
-    dev: true
 
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
@@ -1070,7 +1068,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
@@ -2076,7 +2073,6 @@ packages:
 
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
-    dev: true
 
   /dargs/7.0.0:
     resolution: {integrity: sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==}
@@ -4667,7 +4663,7 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/1.2.6_4u6zbjx6dbt7fttn6k4hvqzi7a:
+  /nextra-theme-docs/1.2.6_uukmyp77ldorbgmzegw66xwu3i:
     resolution: {integrity: sha512-6tSq74EEw/lfZXfrN9TXr8UFov1mddW+yXnwQB57XRF9hBVq3WtVl6lJT7Xe9q0S0s9lkEeGviHtq+NRpONcQQ==}
     peerDependencies:
       next: '>=9.5.3'
@@ -4688,7 +4684,7 @@ packages:
       prism-react-renderer: 1.3.5_react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-innertext: 1.1.5_react@17.0.2
+      react-innertext: 1.1.5_skqlhrap4das3cz5b6iqdn2lqi
       title: 3.4.4
     transitivePeerDependencies:
       - '@types/react'
@@ -5290,12 +5286,13 @@ packages:
       react: 17.0.2
       scheduler: 0.20.2
 
-  /react-innertext/1.1.5_react@17.0.2:
+  /react-innertext/1.1.5_skqlhrap4das3cz5b6iqdn2lqi:
     resolution: {integrity: sha512-PWAqdqhxhHIv80dT9znP2KvS+hfkbRovFp4zFYHFFlOoQLRiawIic81gKb3U1wEyJZgMwgs3JoLtwryASRWP3Q==}
     peerDependencies:
       '@types/react': '>=0.0.0 <=99'
       react: '>=0.0.0 <=99'
     dependencies:
+      '@types/react': 17.0.48
       react: 17.0.2
     dev: false
 

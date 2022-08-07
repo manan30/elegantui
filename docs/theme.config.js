@@ -1,7 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 export default {
   projectLink: 'https://github.com/manan30/elegantui',
-  docsRepositoryBase: 'https://github.com/manan30/elegantui/blob/main/docs',
+  github: 'https://github.com/manan30/elegantui',
+  docsRepositoryBase:
+    'https://github.com/manan30/elegantui/tree/main/docs/pages',
   titleSuffix: ' – ElegantUI',
   nextLinks: true,
   prevLinks: true,
@@ -10,7 +12,7 @@ export default {
   darkMode: true,
   footer: true,
   footerText: `MIT ${new Date().getFullYear()} © Manan Joshi.`,
-  footerEditLink: `Edit this page on GitHub`,
+  footerEditLink: ``,
   logo: <span>ElegantUI - React component library</span>,
   head: (
     <>
