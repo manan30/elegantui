@@ -14,7 +14,10 @@
     "url": "https://github.com/manan30/elegantui.git",
     "directory": "docs"
   },
-  "scripts": {},
+  "scripts": {
+    "dev": "pnpm next",
+    "build": "pnpm next build"
+  },
   "dependencies": {
     "next": "^12.2.4",
     "nextra": "^1.1.0",
