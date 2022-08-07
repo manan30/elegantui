@@ -1,6 +1,6 @@
 {
   "name": "@elegantui/atoms",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ElegantUI base components",
   "keywords": [
     "react",
@@ -79,6 +79,7 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "vitebook:dev": "vitebook dev",
     "vitebook:build": "vitebook build",
-    "vitebook:preview": "vitebook preview"
+    "vitebook:preview": "vitebook preview",
+    "prepublishOnly": "pnpm build"
   }
 }
