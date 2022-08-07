@@ -11,13 +11,13 @@ export const __pageMeta: PageMeta = {
 };
 
 function BadgeStory() {
-  const [variant, setVariant] = useState<BadgeProps['variant']>('default');
+  const [variant, setVariant] = useState<BadgeProps['appearance']>('default');
   const [text, setText] = useState('Badge');
 
   return (
     <>
       <Variant name='Default'>
-        <Badge text={text} variant={variant} />
+        <Badge text={text} appearance={variant} />
       </Variant>
 
       <ControlsAddon>
@@ -37,7 +37,7 @@ function BadgeStory() {
           <select
             value={variant}
             onChange={(e) => {
-              setVariant(e.target.value as BadgeProps['variant']);
+              setVariant(e.target.value as BadgeProps['appearance']);
             }}
           >
             {[

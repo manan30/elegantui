@@ -1,4 +1,4 @@
-# ElegantUI Card component
+# ElegantUI Badge component
 
 ## Installation
 
@@ -9,12 +9,9 @@ npm i @elegantui/atoms
 ## Usage
 
 ```js
-import { Card } from '@elegantui/atoms';
+import { Badge } from '@elegantui/atoms';
 
-<Card>
-  <h2>Card Title</h2>
-  <p style={{ marginTop: '1rem' }}>Card Body</p>
-</Card>;
+<Badge text='BadgeText' appearance='error' />;
 ```
 
 ## License
