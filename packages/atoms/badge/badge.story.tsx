@@ -12,12 +12,13 @@ export const __pageMeta: PageMeta = {
 
 function BadgeStory() {
   const [variant, setVariant] = useState<BadgeProps['appearance']>('default');
+  const [size, setSize] = useState<BadgeProps['size']>('sm');
   const [text, setText] = useState('Badge');
 
   return (
     <>
       <Variant name='Default'>
-        <Badge text={text} appearance={variant} />
+        <Badge text={text} appearance={variant} size={size} />
       </Variant>
 
       <ControlsAddon>
@@ -50,6 +51,23 @@ function BadgeStory() {
             ].map((variant) => (
               <option value={variant} key={variant}>
                 {variant}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
+        >
+          <label>Size</label>
+          <select
+            value={size}
+            onChange={(e) => {
+              setSize(e.target.value as BadgeProps['size']);
+            }}
+          >
+            {['sm', 'md', 'lg'].map((sz) => (
+              <option value={sz} key={sz}>
+                {sz}
               </option>
             ))}
           </select>

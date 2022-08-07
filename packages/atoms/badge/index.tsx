@@ -10,10 +10,16 @@ export type BadgeProps = {
     | 'success'
     | 'warning'
     | 'error';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
 };
 
-function Badge({ text, appearance = 'default', className }: BadgeProps) {
+function Badge({
+  text,
+  appearance = 'default',
+  size = 'sm',
+  className
+}: BadgeProps) {
   const badgeAppearance = React.useMemo(() => {
     switch (appearance) {
       case 'error':
@@ -30,11 +36,23 @@ function Badge({ text, appearance = 'default', className }: BadgeProps) {
     }
   }, [appearance]);
 
+  const badgeSize = React.useMemo(() => {
+    switch (size) {
+      case 'sm':
+        return 'text-sm';
+      case 'md':
+        return 'text-base';
+      case 'lg':
+        return 'text-lg';
+    }
+  }, [size]);
+
   return (
     <span
       className={tm(
         'text-success-darker grid place-items-center rounded-lg bg-opacity-20 px-2 py-1 font-semibold tracking-[-0.01em]',
         `${badgeAppearance} `,
+        `${badgeSize} `,
         className
       )}
     >
