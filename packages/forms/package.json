@@ -1,5 +1,5 @@
 {
-  "name": "@elegantui/form",
+  "name": "@elegantui/forms",
   "version": "0.0.0",
   "description": "ElegantUI form components",
   "keywords": [
@@ -10,7 +10,7 @@
     "system",
     "form"
   ],
-  "homepage": "https://github.com/manan30/elegantui/packages/form#readme",
+  "homepage": "https://github.com/manan30/elegantui/packages/forms#readme",
   "bugs": {
     "url": "https://github.com/manan30/elegantui/issues",
     "email": "mananjoshi1995@gmail.com"
@@ -20,7 +20,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/manan30/elegantui.git",
-    "directory": "packages/form"
+    "directory": "packages/forms"
   },
   "files": [
     "dist"
@@ -41,6 +41,7 @@
   },
   "sideEffects": false,
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
     "tailwind-merge": "^1.5.1",
     "tailwindcss": "^3.1.7",
     "typescript": "^4.4.0"
