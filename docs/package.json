@@ -15,8 +15,8 @@
     "directory": "docs"
   },
   "scripts": {
-    "dev": "pnpm next",
-    "build": "pnpm next build"
+    "dev": "yarn next",
+    "build": "yarn next build"
   },
   "dependencies": {
     "next": "^12.2.4",

@@ -5,6 +5,9 @@
     "lint:fix": { "outputs": [] },
     "format:check": { "outputs": [] },
     "format:fix": { "outputs": [] },
-    "typecheck": { "outputs": [] }
+    "typecheck": { "outputs": [] },
+    "dev": {
+      "cache": false
+    }
   }
 }
