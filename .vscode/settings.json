@@ -3,6 +3,7 @@
     "commitlint",
     "elegantui",
     "headlessui",
+    "nextra",
     "preact",
     "tailwindcss",
     "tsbuildinfo",
