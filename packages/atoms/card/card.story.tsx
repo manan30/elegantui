@@ -10,7 +10,7 @@ export const __pageMeta: PageMeta = {
   title: 'Card'
 };
 
-function ButtonStory() {
+function CardStory() {
   const [variant, setVariant] = useState<CardProps['variant']>('raised');
   const [rounded, setRounded] = useState(true);
 
@@ -62,6 +62,6 @@ function ButtonStory() {
   );
 }
 
-ButtonStory.displayName = 'ButtonStory';
+CardStory.displayName = 'CardStory';
 
-export default ButtonStory;
+export default CardStory;
