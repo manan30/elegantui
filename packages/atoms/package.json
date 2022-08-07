@@ -38,6 +38,7 @@
       "require": "./dist/styles.css"
     }
   },
+  "sideEffects": false,
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@headlessui/react": "^1.6.6",
