@@ -82,7 +82,7 @@ function Button({
         buttonVariant,
         buttonAppearance,
         disabled &&
-          'under cursor-default opacity-50 hover:no-underline hover:shadow-none',
+          'under cursor-not-allowed opacity-50 hover:no-underline hover:shadow-none',
         className,
         loading && 'flex items-center space-x-1'
       )}

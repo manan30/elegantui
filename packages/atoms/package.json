@@ -51,6 +51,7 @@
     "@vitebook/preact": "^0.100.5",
     "@vitebook/theme-default": "^0.100.5",
     "autoprefixer": "^10.0.0",
+    "color": "^4.2.3",
     "postcss": "^8.0.0",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
@@ -81,5 +82,8 @@
     "vitebook:build": "vitebook build",
     "vitebook:preview": "vitebook preview",
     "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

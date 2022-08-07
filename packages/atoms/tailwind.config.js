@@ -14,12 +14,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        default: '#EAEAEB',
+        default: '#eaeaeb',
         primary: '#1e6091',
         secondary: '#184e77',
-        success: '#37BE45',
+        success: '#37be45',
         error: '#cc001b',
-        warning: '#F5AB00'
+        warning: '#f5ab00'
       },
       borderColor: {
         default: 'currentColor'
