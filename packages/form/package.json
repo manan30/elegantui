@@ -1,0 +1,71 @@
+{
+  "name": "@elegantui/form",
+  "version": "0.0.0",
+  "description": "ElegantUI form components",
+  "keywords": [
+    "react",
+    "hooks",
+    "components",
+    "design",
+    "system",
+    "form"
+  ],
+  "homepage": "https://github.com/manan30/elegantui/packages/form#readme",
+  "bugs": {
+    "url": "https://github.com/manan30/elegantui/issues",
+    "email": "mananjoshi1995@gmail.com"
+  },
+  "license": "MIT",
+  "author": "Manan Joshi <mananjoshi1995@gmail.com> (https://mananjoshi.me)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manan30/elegantui.git",
+    "directory": "packages/form"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/styles.css": {
+      "import": "./dist/styles.css",
+      "require": "./dist/styles.css"
+    }
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "tailwind-merge": "^1.5.1",
+    "tailwindcss": "^3.1.7",
+    "typescript": "^4.4.0"
+  },
+  "peerDependencies": {
+    "react": "16.x || 17.x || 18.x",
+    "react-dom": "16.x || 17.x || 18.x"
+  },
+  "scripts": {
+    "build": "pnpm build:packages && pnpm build:types && pnpm build:tailwind",
+    "build:packages": "tsup ./index.ts",
+    "build:types": "tsup ./index.ts --no-config --dts-only",
+    "build:tailwind": "pnpm exec tailwindcss --minify -i ./styles/index.css -o ./dist/styles.css",
+    "watch:tailwind": "pnpm exec tailwindcss -i ./styles/index.css -o ./dist/styles.css --watch",
+    "lint:check": "eslint --max-warnings 0 '**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix '**/*.{ts,tsx}'",
+    "format:check": "prettier --check '**/*.{ts,tsx,css}'",
+    "format:fix": "prettier --write '**/*.{ts,tsx,css}'",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "vitebook:dev": "vitebook dev",
+    "vitebook:build": "vitebook build",
+    "vitebook:preview": "vitebook preview",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
