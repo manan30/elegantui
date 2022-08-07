@@ -5,6 +5,8 @@ import {
   DefaultThemeConfig
 } from '@vitebook/theme-default/node';
 
+console.log('');
+
 export default defineConfig<DefaultThemeConfig>({
   include: ['**/*.story.tsx'],
   plugins: [

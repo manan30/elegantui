@@ -48,11 +48,11 @@
   "private": true,
   "lint-staged": {
     "*.ts": [
-      "eslint --max-warnings 0",
+      "eslint",
       "prettier --check"
     ],
     "*.tsx": [
-      "eslint --max-warnings 0",
+      "eslint",
       "prettier --check"
     ],
     "*.css": [
