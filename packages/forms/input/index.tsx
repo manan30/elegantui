@@ -56,7 +56,7 @@ function Input({
       </label>
       <input
         className={tm(
-          'rounded-md border-[1.5px] border-gray-400 bg-gray-100 py-[0.375rem] px-3 text-gray-600 shadow-sm transition-colors focus:outline-none focus:ring-1 sm:text-sm',
+          'rounded-md border-[1.5px] border-gray-400 bg-gray-50 py-[0.375rem] px-3 text-gray-600 shadow-sm transition-colors focus:outline-none focus:ring-1 sm:text-sm',
           disabled && 'cursor-not-allowed opacity-50',
           inputVariant,
           classes
