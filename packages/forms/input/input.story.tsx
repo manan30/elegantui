@@ -28,6 +28,7 @@ function InputStory() {
           disabled={disabled}
           onChange={eventCallback}
           variant={variant}
+          hideLabel
         />
       </Variant>
 

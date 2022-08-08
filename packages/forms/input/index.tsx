@@ -6,6 +6,7 @@ import type { InputHTMLAttributes } from 'react';
 export type InputProps = {
   name: string;
   label: string;
+  hideLabel?: boolean;
   variant?:
     | 'default'
     | 'primary'
@@ -18,6 +19,7 @@ export type InputProps = {
 function Input({
   name,
   label,
+  hideLabel = false,
   variant = 'primary',
   type = 'text',
   ...props
@@ -45,7 +47,10 @@ function Input({
     <div className='flex flex-col space-y-2'>
       <label
         htmlFor={name}
-        className={`text-sm font-medium capitalize text-gray-700`}
+        className={tm(
+          'text-sm font-medium capitalize text-gray-700',
+          hideLabel && 'sr-only'
+        )}
       >
         {label}
       </label>
