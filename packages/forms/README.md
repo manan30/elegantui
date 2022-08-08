@@ -1,11 +1,11 @@
-# @elegantui/form
+# @elegantui/forms
 
 ElegantUI form components
 
 ## Installation
 
 ```bash
-npm i @elegantui/form
+npm i @elegantui/forms
 ```
 
 ## License
