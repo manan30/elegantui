@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Variant } from '@vitebook/preact';
 import {
   ControlsAddon,
   eventCallback,
@@ -20,17 +19,15 @@ function InputStory() {
 
   return (
     <>
-      <Variant name='Default'>
-        <Input
-          name='default'
-          label='Input'
-          placeholder='Enter text'
-          disabled={disabled}
-          onChange={eventCallback}
-          variant={variant}
-          hideLabel
-        />
-      </Variant>
+      <Input
+        name='default'
+        label='Input'
+        placeholder='Enter text'
+        disabled={disabled}
+        onChange={eventCallback}
+        variant={variant}
+        hideLabel
+      />
 
       <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>

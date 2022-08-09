@@ -11,12 +11,12 @@ npm i @elegantui/forms
 ```js
 import { Checkbox } from '@elegantui/forms';
 
-<Input
+<Checkbox
   name='default'
-  label='Input'
-  placeholder='Enter text'
-  disabled={disabled}
+  checkboxText='Subscribe to my newsletter'
   onChange={eventCallback}
+  value='default'
+  disabled={disabled}
   variant={variant}
 />;
 ```

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Variant } from '@vitebook/preact';
 import { ControlsAddon } from '@vitebook/preact/addons';
 import Button from '../button';
 import Dialog from '.';
@@ -20,23 +19,21 @@ function DialogStory() {
 
   return (
     <>
-      <Variant name='Default'>
-        <div className='grid h-full w-full place-items-center'>
-          <Button onClick={() => setOpen(true)}>Open Dialog</Button>
-        </div>
-        <div className='w-32'>
-          <Dialog
-            open={open}
-            dismissHandler={() => setOpen(false)}
-            title={title}
-            disableCloseOnEsc={disableCloseOnEsc}
-            disableCloseButton={disableCloseButton}
-            size={size}
-          >
-            <p>Test</p>
-          </Dialog>
-        </div>
-      </Variant>
+      <div className='grid h-full w-full place-items-center'>
+        <Button onClick={() => setOpen(true)}>Open Dialog</Button>
+      </div>
+      <div className='w-32'>
+        <Dialog
+          open={open}
+          dismissHandler={() => setOpen(false)}
+          title={title}
+          disableCloseOnEsc={disableCloseOnEsc}
+          disableCloseButton={disableCloseButton}
+          size={size}
+        >
+          <p>Test</p>
+        </Dialog>
+      </div>
 
       <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>

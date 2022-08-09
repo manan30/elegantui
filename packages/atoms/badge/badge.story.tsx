@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Variant } from '@vitebook/preact';
 import { ControlsAddon } from '@vitebook/preact/addons';
 import Badge from '.';
 
@@ -17,9 +16,7 @@ function BadgeStory() {
 
   return (
     <>
-      <Variant name='Default'>
-        <Badge text={text} appearance={variant} size={size} />
-      </Variant>
+      <Badge text={text} appearance={variant} size={size} />
 
       <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>

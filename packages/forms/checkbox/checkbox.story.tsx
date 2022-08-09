@@ -1,34 +1,34 @@
-import React from 'react';
-import { Variant } from '@vitebook/preact';
+import React, { useState } from 'react';
 import {
-  // ControlsAddon,
+  ControlsAddon,
   eventCallback,
   EventsAddon
 } from '@vitebook/preact/addons';
 import Checkbox from '.';
 
 import type { PageMeta } from '@vitebook/client';
-// import type { CheckboxProps } from '.';
+import type { CheckboxProps } from '.';
 
 export const __pageMeta: PageMeta = {
   title: 'Checkbox'
 };
 
 function CheckboxStory() {
-  // const [variant, setVariant] = useState<InputProps['variant']>('primary');
+  const [disabled, setDisabled] = useState(false);
+  const [variant, setVariant] = useState<CheckboxProps['variant']>('primary');
 
   return (
     <>
-      <Variant name='Default'>
-        <Checkbox
-          name='default'
-          checkboxText='Subscribe to my newsletter'
-          onChange={eventCallback}
-          value=''
-        />
-      </Variant>
+      <Checkbox
+        name='default'
+        checkboxText='Subscribe to my newsletter'
+        onChange={eventCallback}
+        value='default'
+        disabled={disabled}
+        variant={variant}
+      />
 
-      {/* <ControlsAddon>
+      <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <label>Disabled</label>
           <input
@@ -45,7 +45,7 @@ function CheckboxStory() {
           <select
             value={variant}
             onChange={(e) => {
-              setVariant(e.target.value as InputProps['variant']);
+              setVariant(e.target.value as CheckboxProps['variant']);
             }}
           >
             {[
@@ -62,7 +62,7 @@ function CheckboxStory() {
             ))}
           </select>
         </div>
-      </ControlsAddon> */}
+      </ControlsAddon>
       <EventsAddon />
     </>
   );

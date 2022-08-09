@@ -8,6 +8,7 @@ export type CheckboxProps = {
   checkboxText: string;
   value: string;
   onChange: InputHTMLAttributes<HTMLInputElement>['onChange'];
+  disabled?: boolean;
   variant?:
     | 'default'
     | 'primary'
@@ -15,47 +16,52 @@ export type CheckboxProps = {
     | 'success'
     | 'warning'
     | 'error';
+  className?: string;
 };
 
-function Checkbox({ name, checkboxText, onChange }: CheckboxProps) {
-  // const { disabled, className: classes, ...rest } = props;
-
-  // const inputVariant = React.useMemo(() => {
-  //   switch (variant) {
-  //     case 'primary':
-  //       return 'focus:border-primary focus:ring-primary';
-  //     case 'secondary':
-  //       return 'focus:border-secondary focus:ring-secondary';
-  //     case 'success':
-  //       return 'focus:border-success focus:ring-success';
-  //     case 'error':
-  //       return 'focus:border-error focus:ring-error';
-  //     case 'warning':
-  //       return 'focus:border-warning focus:ring-warning';
-  //     default:
-  //       return 'focus:border-gray-600 focus:ring-gray-600';
-  //   }
-  // }, [variant]);
+function Checkbox({
+  name,
+  checkboxText,
+  onChange,
+  disabled,
+  variant,
+  value,
+  className: classes
+}: CheckboxProps) {
+  const checkboxVariant = React.useMemo(() => {
+    switch (variant) {
+      case 'primary':
+        return 'text-primary focus:border-primary focus:ring-primary';
+      case 'secondary':
+        return 'text-secondary focus:border-secondary focus:ring-secondary';
+      case 'success':
+        return 'text-success focus:border-success focus:ring-success';
+      case 'error':
+        return 'text-error focus:border-error focus:ring-error';
+      case 'warning':
+        return 'text-warning focus:border-warning focus:ring-warning';
+      default:
+        return 'text-gray-600 focus:border-gray-600 focus:ring-gray-600';
+    }
+  }, [variant]);
 
   return (
-    <label>
+    <label htmlFor={name} className='inline-flex items-center'>
       <input
         className={tm(
-          'rounded-md border-gray-400 bg-gray-50 shadow-sm transition-colors focus:border-indigo-300 focus:outline-none focus:ring-1',
-          'rounded border-gray-300 text-indigo-600 shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50 focus:ring-offset-0'
-          // disabled && 'cursor-not-allowed opacity-50',
-          // inputVariant,
-          // classes
+          'rounded border-gray-400 bg-gray-50 shadow-sm transition-colors focus:outline-none focus:ring-1 focus:ring-offset-2',
+          disabled && 'cursor-not-allowed bg-gray-300 opacity-50',
+          checkboxVariant,
+          classes
         )}
         id={name}
         name={name}
+        value={value}
         type='checkbox'
         onChange={onChange}
-        // disabled={disabled}
-        // autoComplete={type}
-        // {...rest}
+        disabled={disabled}
       />
-      <span>{checkboxText}</span>
+      <span className='ml-2 text-sm'>{checkboxText}</span>
     </label>
   );
 }

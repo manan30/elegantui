@@ -4,5 +4,6 @@ const baseTailwindConfig = require('../../tailwind-base.config');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   ...baseTailwindConfig,
-  content: ['./**/*.tsx']
+  content: ['./**/*.tsx'],
+  plugins: [require('@tailwindcss/forms')]
 };

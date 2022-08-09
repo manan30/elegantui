@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Variant } from '@vitebook/preact';
 import { ControlsAddon } from '@vitebook/preact/addons';
 import Card from '.';
 
@@ -16,19 +15,17 @@ function CardStory() {
 
   return (
     <>
-      <Variant name='Default'>
-        <Card rounded={rounded} variant={variant}>
-          <h2 className='text-base font-semibold uppercase tracking-wide text-indigo-600'>
-            Transactions
-          </h2>
-          <p className='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl'>
-            A better way to send money
-          </p>
-          <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
-            Lorem ipsum dolor sit amet new new new card
-          </p>
-        </Card>
-      </Variant>
+      <Card rounded={rounded} variant={variant}>
+        <h2 className='text-base font-semibold uppercase tracking-wide text-indigo-600'>
+          Transactions
+        </h2>
+        <p className='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl'>
+          A better way to send money
+        </p>
+        <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
+          Lorem ipsum dolor sit amet new new new card
+        </p>
+      </Card>
 
       <ControlsAddon>
         <div
