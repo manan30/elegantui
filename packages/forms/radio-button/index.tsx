@@ -61,7 +61,9 @@ function RadioButton({
         onChange={onChange}
         disabled={disabled}
       />
-      <span className='ml-2 text-sm'>{radioButtonText}</span>
+      <span className={tm('ml-2 text-sm', disabled && 'opacity-50')}>
+        {radioButtonText}
+      </span>
     </label>
   );
 }
