@@ -1,4 +1,4 @@
-# ElegantUI Forms Checkbox component
+# ElegantUI Forms RadioButton component
 
 ## Installation
 
@@ -9,11 +9,11 @@ npm i @elegantui/forms
 ## Usage
 
 ```js
-import { Checkbox } from '@elegantui/forms';
+import { RadioButton } from '@elegantui/forms';
 
-<Checkbox
+<RadioButton
   name='default'
-  checkboxText='Subscribe to my newsletter'
+  radioButtonText='Radio Button'
   onChange={eventCallback}
   value='default'
   disabled={disabled}

@@ -1,4 +1,5 @@
 import Input from './input';
 import Checkbox from './checkbox';
+import RadioButton from './radio-button';
 
-export { Input, Checkbox };
+export { Input, Checkbox, RadioButton };
