@@ -7,7 +7,7 @@ export type CheckboxProps = {
   name: string;
   checkboxText: string;
   value: string;
-  onChange: InputHTMLAttributes<HTMLInputElement>['onChange'];
+  onChange?: InputHTMLAttributes<HTMLInputElement>['onChange'];
   disabled?: boolean;
   variant?:
     | 'default'
@@ -24,7 +24,7 @@ function Checkbox({
   checkboxText,
   onChange,
   disabled,
-  variant,
+  variant = 'primary',
   value,
   className: classes
 }: CheckboxProps) {
