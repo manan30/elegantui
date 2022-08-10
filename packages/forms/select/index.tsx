@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
 import { Listbox } from '@headlessui/react';
+import Option from './option';
+
+import type { ReactElement } from 'react';
 
 export type SelectProps = {
   name: string;
@@ -11,7 +14,7 @@ export type SelectProps = {
   multiple?: boolean;
   label: string;
   hideLabel?: boolean;
-  children?: typeof Option | Array<typeof Option>;
+  children: ReactElement<typeof Option> | ReactElement<typeof Option>[];
   // variant?:
   //   | 'default'
   //   | 'primary'
@@ -30,7 +33,8 @@ function Select({
   disabled = false,
   multiple = false,
   label,
-  hideLabel
+  hideLabel,
+  children
 }: SelectProps) {
   //   {
   //   name,
@@ -70,7 +74,7 @@ function Select({
         {label}
       </Listbox.Label>
       <Listbox.Button>{selectedText}</Listbox.Button>
-      <Listbox.Options></Listbox.Options>
+      <Listbox.Options>{children}</Listbox.Options>
     </Listbox>
   );
 }

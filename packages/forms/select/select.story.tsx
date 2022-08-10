@@ -5,6 +5,7 @@ import {
   EventsAddon
 } from '@vitebook/preact/addons';
 import Select from '.';
+import Option from './option';
 
 import type { PageMeta } from '@vitebook/client';
 // import type { SelectProps } from '.';
@@ -12,6 +13,14 @@ import type { PageMeta } from '@vitebook/client';
 export const __pageMeta: PageMeta = {
   title: 'Select'
 };
+
+const people = [
+  { id: 1, name: 'Durward Reynolds', unavailable: false },
+  { id: 2, name: 'Kenton Towne', unavailable: false },
+  { id: 3, name: 'Therese Wunsch', unavailable: false },
+  { id: 4, name: 'Benedict Kessler', unavailable: true },
+  { id: 5, name: 'Katelyn Rohan', unavailable: false }
+];
 
 function SelectStory() {
   const [disabled, setDisabled] = useState(false);
@@ -28,7 +37,9 @@ function SelectStory() {
         disabled={disabled}
         onChange={eventCallback}
       >
-        {/* <div></div> */}
+        {people.map((person) => (
+          <Option key={person.id} optionText={person.name} value={person} />
+        ))}
       </Select>
 
       <ControlsAddon>
