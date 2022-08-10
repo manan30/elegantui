@@ -19,11 +19,12 @@ function Option({
     <Listbox.Option
       value={value}
       disabled={disabled}
-      className={({ active }) =>
+      className={({ active, disabled }) =>
         tm(
           'relative cursor-default select-none py-2 pl-10 pr-4',
           active ? 'bg-primary bg-opacity-20 text-secondary' : 'text-gray-600',
-          classes
+          classes,
+          disabled && 'cursor-not-allowed opacity-50'
         )
       }
     >

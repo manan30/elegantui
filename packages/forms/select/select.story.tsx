@@ -38,7 +38,12 @@ function SelectStory() {
           variant={variant}
         >
           {people.map((person) => (
-            <Option key={person.id} optionText={person.name} value={person} />
+            <Option
+              key={person.id}
+              optionText={person.name}
+              value={person}
+              disabled={person.unavailable}
+            />
           ))}
         </Select>
       </div>
