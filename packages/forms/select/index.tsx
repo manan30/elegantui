@@ -118,4 +118,6 @@ function Select({
 
 Select.displayName = 'Select';
 
+Select.Option = Option;
+
 export default Select;
