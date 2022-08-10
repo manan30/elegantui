@@ -8,7 +8,7 @@ import Select from '.';
 import Option from './option';
 
 import type { PageMeta } from '@vitebook/client';
-// import type { SelectProps } from '.';
+import type { SelectProps } from '.';
 
 export const __pageMeta: PageMeta = {
   title: 'Select'
@@ -23,9 +23,9 @@ const people = [
 ];
 
 function SelectStory() {
+  const [person, setPerson] = useState(people[0]);
   const [disabled, setDisabled] = useState(false);
-  // const [variant, setVariant] =
-  //   useState<RadioButtonProps['variant']>('primary');
+  const [variant, setVariant] = useState<SelectProps['variant']>('primary');
 
   return (
     <>
@@ -33,10 +33,13 @@ function SelectStory() {
         <Select
           name='Default'
           label='Select'
-          selectedText='Hello'
-          value={''}
+          selectedText={person.name}
+          value={person}
           disabled={disabled}
-          onChange={eventCallback}
+          onChange={(p) => {
+            setPerson(p as typeof person);
+          }}
+          variant={variant}
         >
           {people.map((person) => (
             <Option key={person.id} optionText={person.name} value={person} />
@@ -54,14 +57,14 @@ function SelectStory() {
             onChange={(e) => setDisabled(e.target.checked)}
           />
         </div>
-        {/* <div
+        <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
         >
           <label>Variant</label>
           <select
             value={variant}
             onChange={(e) => {
-              setVariant(e.target.value as RadioButtonProps['variant']);
+              setVariant(e.target.value as SelectProps['variant']);
             }}
           >
             {[
@@ -77,7 +80,7 @@ function SelectStory() {
               </option>
             ))}
           </select>
-        </div> */}
+        </div>
       </ControlsAddon>
       <EventsAddon />
     </>

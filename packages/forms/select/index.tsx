@@ -15,13 +15,13 @@ export type SelectProps = {
   label: string;
   hideLabel?: boolean;
   children: ReactElement<typeof Option> | ReactElement<typeof Option>[];
-  // variant?:
-  //   | 'default'
-  //   | 'primary'
-  //   | 'secondary'
-  //   | 'success'
-  //   | 'warning'
-  //   | 'error';
+  variant?:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'error';
   className?: string;
 };
 
@@ -35,33 +35,25 @@ function Select({
   label,
   hideLabel,
   children,
-  className: classes
+  className: classes,
+  variant = 'primary'
 }: SelectProps) {
-  //   {
-  //   name,
-  //   radioButtonText,
-  //   onChange,
-  //   disabled,
-  //   variant = 'primary',
-  //   value,
-  //   className: classes
-  // }: RadioButtonProps
-  // const radioButtonVariant = React.useMemo(() => {
-  //   switch (variant) {
-  //     case 'primary':
-  //       return 'text-primary focus:border-primary focus:ring-primary';
-  //     case 'secondary':
-  //       return 'text-secondary focus:border-secondary focus:ring-secondary';
-  //     case 'success':
-  //       return 'text-success focus:border-success focus:ring-success';
-  //     case 'error':
-  //       return 'text-error focus:border-error focus:ring-error';
-  //     case 'warning':
-  //       return 'text-warning focus:border-warning focus:ring-warning';
-  //     default:
-  //       return 'text-gray-600 focus:border-gray-600 focus:ring-gray-600';
-  //   }
-  // }, [variant]);
+  const selectVariant = React.useMemo(() => {
+    switch (variant) {
+      case 'primary':
+        return 'text-primary focus:border-primary focus:ring-primary';
+      case 'secondary':
+        return 'text-secondary focus:border-secondary focus:ring-secondary';
+      case 'success':
+        return 'text-success focus:border-success focus:ring-success';
+      case 'error':
+        return 'text-error focus:border-error focus:ring-error';
+      case 'warning':
+        return 'text-warning focus:border-warning focus:ring-warning';
+      default:
+        return 'text-gray-600 focus:border-gray-600 focus:ring-gray-600';
+    }
+  }, [variant]);
 
   return (
     <Listbox
@@ -85,7 +77,7 @@ function Select({
         className={tm(
           'rounded-md border-[1.5px] border-gray-400 bg-gray-50 py-[0.375rem] px-3 text-left font-medium text-gray-600 shadow-sm transition-colors focus:outline-none focus:ring-1 sm:text-sm',
           disabled && 'cursor-not-allowed opacity-50',
-          // inputVariant,
+          selectVariant,
           classes
         )}
       >
