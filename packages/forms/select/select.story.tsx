@@ -29,18 +29,20 @@ function SelectStory() {
 
   return (
     <>
-      <Select
-        name='Default'
-        label='Select'
-        selectedText='Hello'
-        value={''}
-        disabled={disabled}
-        onChange={eventCallback}
-      >
-        {people.map((person) => (
-          <Option key={person.id} optionText={person.name} value={person} />
-        ))}
-      </Select>
+      <div className='w-72'>
+        <Select
+          name='Default'
+          label='Select'
+          selectedText='Hello'
+          value={''}
+          disabled={disabled}
+          onChange={eventCallback}
+        >
+          {people.map((person) => (
+            <Option key={person.id} optionText={person.name} value={person} />
+          ))}
+        </Select>
+      </div>
 
       <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>

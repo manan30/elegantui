@@ -22,7 +22,7 @@ export type SelectProps = {
   //   | 'success'
   //   | 'warning'
   //   | 'error';
-  // className?: string;
+  className?: string;
 };
 
 function Select({
@@ -34,7 +34,8 @@ function Select({
   multiple = false,
   label,
   hideLabel,
-  children
+  children,
+  className: classes
 }: SelectProps) {
   //   {
   //   name,
@@ -69,11 +70,27 @@ function Select({
       name={name}
       disabled={disabled}
       multiple={multiple}
+      as='div'
+      className='flex flex-col space-y-2'
     >
-      <Listbox.Label className={tm(hideLabel && 'sr-only')}>
+      <Listbox.Label
+        className={tm(
+          'text-sm font-medium capitalize text-gray-700',
+          hideLabel && 'sr-only'
+        )}
+      >
         {label}
       </Listbox.Label>
-      <Listbox.Button>{selectedText}</Listbox.Button>
+      <Listbox.Button
+        className={tm(
+          'rounded-md border-[1.5px] border-gray-400 bg-gray-50 py-[0.375rem] px-3 text-left font-medium text-gray-600 shadow-sm transition-colors focus:outline-none focus:ring-1 sm:text-sm',
+          disabled && 'cursor-not-allowed opacity-50',
+          // inputVariant,
+          classes
+        )}
+      >
+        {selectedText}
+      </Listbox.Button>
       <Listbox.Options>{children}</Listbox.Options>
     </Listbox>
   );
