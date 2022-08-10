@@ -3,5 +3,5 @@
   "jsxSingleQuote": true,
   "trailingComma": "none",
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindConfig": "./packages/atoms/tailwind.config.js"
+  "tailwindConfig": "./tailwind-base.config.js"
 }
