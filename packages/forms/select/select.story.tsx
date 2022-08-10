@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ControlsAddon,
-  eventCallback,
-  EventsAddon
-} from '@vitebook/preact/addons';
+import { ControlsAddon, EventsAddon } from '@vitebook/preact/addons';
 import Select from '.';
 import Option from './option';
 
