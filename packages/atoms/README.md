@@ -14,6 +14,7 @@ npm i @elegantui/atoms
 - [Dialog](https://github.com/manan30/elegantui/tree/main/packages/atoms/dialog)
 - [Card](https://github.com/manan30/elegantui/tree/main/packages/atoms/card)
 - [Badge](https://github.com/manan30/elegantui/tree/main/packages/atoms/badge)
+- [Alert](https://github.com/manan30/elegantui/tree/main/packages/atoms/alert)
 
 ## License
 
