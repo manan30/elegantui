@@ -15,6 +15,7 @@ npm i @elegantui/atoms
 - [Card](https://github.com/manan30/elegantui/tree/main/packages/atoms/card)
 - [Badge](https://github.com/manan30/elegantui/tree/main/packages/atoms/badge)
 - [Alert](https://github.com/manan30/elegantui/tree/main/packages/atoms/alert)
+- [Loading Spinner](https://github.com/manan30/elegantui/tree/main/packages/atoms/loading-spinner)
 
 ## License
 
