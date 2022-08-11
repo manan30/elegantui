@@ -12,37 +12,34 @@ npm i @elegantui/forms
 import { Combobox } from '@elegantui/forms';
 import { useState } from 'react';
 
-const people = [
-  { id: 1, name: 'Durward Reynolds', unavailable: false },
-  { id: 2, name: 'Kenton Towne', unavailable: false },
-  { id: 3, name: 'Therese Wunsch', unavailable: false },
-  { id: 4, name: 'Benedict Kessler', unavailable: true },
-  { id: 5, name: 'Katelyn Rohan', unavailable: false }
-];
-
 function Component() {
   const [person, setPerson] = useState(people[0]);
+  const [query, setQuery] = useState('');
+
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.toLowerCase().includes(query.toLowerCase());
+        });
 
   return (
-    <Combobox
-      name='Default'
-      label='Select'
-      selectedText={person.name}
-      value={person}
-      onChange={(p) => {
-        setPerson(p as typeof person);
-      }}
-    >
-      {people.map((person) => (
-        <Combobox.Option
-          key={person.id}
-          optionText={person.name}
-          value={person}
-          disabled={person.unavailable}
-        />
-      ))}
-    </Combobox>
-  );
+  <Combobox
+    name='Default'
+    label='Combobox'
+    value={person}
+    disabled={disabled}
+    onChange={(p) => {
+      setPerson(p as typeof person);
+    }}
+    variant={variant}
+    inputChangeHandler={(e) => setQuery(e.target.value)}
+  >
+    {filteredPeople.map((person) => (
+      <Combobox.Option key={person} optionText={person} value={person} />
+    ))}
+  </Combobox>
+);
 }
 ```
 
