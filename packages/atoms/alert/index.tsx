@@ -156,12 +156,12 @@ function Alert({
       )}
     >
       {customIcon ?? alertAppearance.icon}
-      <span>{children}</span>
+      <span className='flex-1'>{children}</span>
       {dismissible ? (
         <Button
           appearance='ghost'
           size='sm'
-          className='rounded-full bg-gray-50 bg-opacity-50 p-1 text-current shadow-none'
+          className='rounded-full bg-slate-100 bg-opacity-60 p-1 text-current shadow-none'
           onClick={dismissHandler}
         >
           <svg
