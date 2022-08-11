@@ -13,7 +13,11 @@ export type LoadingSpinnerProps = {
     | 'error';
 };
 
-function LoadingSpinner({ className, size = 'sm' }: LoadingSpinnerProps) {
+function LoadingSpinner({
+  className,
+  size = 'sm',
+  variant = 'default'
+}: LoadingSpinnerProps) {
   const loadingSpinnerSize = React.useMemo(() => {
     switch (size) {
       case 'sm':
@@ -27,9 +31,27 @@ function LoadingSpinner({ className, size = 'sm' }: LoadingSpinnerProps) {
     }
   }, [size]);
 
+  const loadingSpinnerVariant = React.useMemo(() => {
+    switch (variant) {
+      case 'primary':
+      case 'secondary':
+      case 'error':
+      case 'warning':
+      case 'success':
+        return `text-${variant}`;
+      default:
+        return 'text-gray-300';
+    }
+  }, [variant]);
+
   return (
     <svg
-      className={tm('animate-spin text-current', loadingSpinnerSize, className)}
+      className={tm(
+        'animate-spin',
+        loadingSpinnerSize,
+        loadingSpinnerVariant,
+        className
+      )}
       xmlns='http://www.w3.org/2000/svg'
       fill='none'
       viewBox='0 0 24 24'

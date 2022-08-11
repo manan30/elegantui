@@ -11,15 +11,15 @@ export const __pageMeta: PageMeta = {
 
 function LoadingSpinnerStory() {
   const [size, setSize] = useState<LoadingSpinnerProps['size']>('md');
+  const [variant, setVariant] =
+    useState<LoadingSpinnerProps['variant']>('default');
 
   return (
     <>
-      <LoadingSpinner size={size} />
+      <LoadingSpinner size={size} variant={variant} />
 
       <ControlsAddon>
-        <div
-          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
-        >
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <label>Size</label>
           <select
             style={{ marginLeft: '0.5rem' }}
@@ -32,6 +32,30 @@ function LoadingSpinnerStory() {
             <option value='md'>Medium</option>
             <option value='lg'>Large</option>
             <option value='xl'>Extra Large</option>
+          </select>
+        </div>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
+        >
+          <label>Variant</label>
+          <select
+            value={variant}
+            onChange={(e) => {
+              setVariant(e.target.value as LoadingSpinnerProps['variant']);
+            }}
+          >
+            {[
+              'default',
+              'primary',
+              'secondary',
+              'success',
+              'warning',
+              'error'
+            ].map((variant) => (
+              <option value={variant} key={variant}>
+                {variant}
+              </option>
+            ))}
           </select>
         </div>
       </ControlsAddon>
