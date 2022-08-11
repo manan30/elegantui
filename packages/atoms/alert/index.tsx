@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
 import Button from '../button';
 
@@ -161,7 +161,7 @@ function Alert({
         <Button
           appearance='ghost'
           size='sm'
-          className='rounded-full bg-slate-100 bg-opacity-60 p-1 text-current shadow-none'
+          className='rounded-full bg-transparent p-1 text-current shadow-none'
           onClick={dismissHandler}
         >
           <svg
