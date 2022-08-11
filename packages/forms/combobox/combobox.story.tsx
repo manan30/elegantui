@@ -10,17 +10,25 @@ export const __pageMeta: PageMeta = {
 };
 
 const people = [
-  { id: 1, name: 'Durward Reynolds', unavailable: false },
-  { id: 2, name: 'Kenton Towne', unavailable: false },
-  { id: 3, name: 'Therese Wunsch', unavailable: false },
-  { id: 4, name: 'Benedict Kessler', unavailable: true },
-  { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  'Durward Reynolds',
+  'Kenton Towne',
+  'Therese Wunsch',
+  'Benedict Kessler',
+  'Katelyn Rohan'
 ];
 
 function ComboboxStory() {
   const [person, setPerson] = useState(people[0]);
+  const [query, setQuery] = useState('');
   const [disabled, setDisabled] = useState(false);
   const [variant, setVariant] = useState<ComboboxProps['variant']>('primary');
+
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.toLowerCase().includes(query.toLowerCase());
+        });
 
   return (
     <>
@@ -28,21 +36,16 @@ function ComboboxStory() {
         <Combobox
           name='Default'
           label='Combobox'
-          comboboxText={person.name}
           value={person}
           disabled={disabled}
           onChange={(p) => {
             setPerson(p as typeof person);
           }}
           variant={variant}
+          inputChangeHandler={(e) => setQuery(e.target.value)}
         >
-          {people.map((person) => (
-            <Combobox.Option
-              key={person.id}
-              optionText={person.name}
-              value={person}
-              disabled={person.unavailable}
-            />
+          {filteredPeople.map((person) => (
+            <Combobox.Option key={person} optionText={person} value={person} />
           ))}
         </Combobox>
       </div>

@@ -3,16 +3,18 @@ import { twMerge as tm } from 'tailwind-merge';
 import { Combobox as HUICombobox, Transition } from '@headlessui/react';
 import Option from './option';
 
-import type { ReactElement } from 'react';
+import type { ReactElement, ChangeEvent } from 'react';
 
 export type ComboboxProps = {
   name: string;
-  comboboxText: string;
   value: unknown;
+  inputDisplayValue?: (item: unknown) => string;
   onChange: (value: unknown) => void;
+  inputChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   multiple?: boolean;
   label: string;
+  nullable?: boolean;
   hideLabel?: boolean;
   children: ReactElement<typeof Option> | ReactElement<typeof Option>[];
   variant?:
@@ -28,10 +30,12 @@ export type ComboboxProps = {
 function Combobox({
   value,
   onChange,
-  comboboxText,
+  inputChangeHandler,
+  inputDisplayValue,
   name,
   disabled = false,
   multiple = false,
+  nullable = true,
   label,
   hideLabel,
   children,
@@ -62,6 +66,7 @@ function Combobox({
       name={name}
       disabled={disabled}
       multiple={multiple}
+      nullable={nullable}
       as='div'
       className='flex flex-col space-y-2'
     >
@@ -74,7 +79,7 @@ function Combobox({
         >
           {label}
         </HUICombobox.Label>
-        <HUICombobox.Button
+        <HUICombobox.Input
           className={tm(
             'relative w-full rounded-md border-[1.5px] border-gray-400 bg-gray-50 py-[0.375rem] px-3 text-left font-medium text-gray-600 shadow-sm transition-colors focus:outline-none focus-visible:ring-1 sm:text-sm',
             disabled && 'cursor-not-allowed opacity-50',
@@ -82,25 +87,9 @@ function Combobox({
             comboboxVariant,
             classes
           )}
-        >
-          <span className='block truncate'>{comboboxText}</span>
-          <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5'
-              viewBox='0 0 20 20'
-              fill='currentColor'
-            >
-              <path
-                fillRule='evenodd'
-                d='M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                clipRule='evenodd'
-                className='h-5 w-5 text-gray-400'
-                aria-hidden='true'
-              />
-            </svg>
-          </span>
-        </HUICombobox.Button>
+          onChange={inputChangeHandler}
+          displayValue={inputDisplayValue}
+        />
         <Transition
           as={React.Fragment}
           leave='transition ease-in duration-100'
