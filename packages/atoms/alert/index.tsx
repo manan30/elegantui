@@ -1,9 +1,14 @@
 import React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
+import Button from '../button';
 
-import type { ReactNode } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 
 export type AlertProps = {
+  children: ReactNode;
+  customIcon?: ReactNode;
+  dismissible?: boolean;
+  dismissHandler?: (e: MouseEvent<HTMLButtonElement>) => void;
   variant?: 'raised' | 'flat' | 'bordered';
   appearance?:
     | 'default'
@@ -12,13 +17,17 @@ export type AlertProps = {
     | 'success'
     | 'warning'
     | 'error';
-  children: ReactNode;
+  className?: string;
 };
 
 function Alert({
   variant = 'flat',
   appearance = 'primary',
-  children
+  children,
+  customIcon,
+  dismissible,
+  dismissHandler,
+  className: classes
 }: AlertProps) {
   const alertVariant = React.useMemo(() => {
     switch (variant) {
@@ -140,13 +149,35 @@ function Alert({
   return (
     <div
       className={tm(
-        'text-medium flex items-center space-x-4 rounded-md bg-opacity-10 p-3',
+        'text-medium relative flex items-center space-x-4 rounded-md bg-opacity-10 p-3',
         alertAppearance.styles,
-        alertVariant
+        alertVariant,
+        classes
       )}
     >
-      {alertAppearance.icon}
+      {customIcon ?? alertAppearance.icon}
       <span>{children}</span>
+      {dismissible ? (
+        <Button
+          appearance='ghost'
+          size='sm'
+          className='rounded-full bg-gray-50 bg-opacity-50 p-1 text-current shadow-none'
+          onClick={dismissHandler}
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-4 w-4'
+            viewBox='0 0 20 20'
+            fill='currentColor'
+          >
+            <path
+              fillRule='evenodd'
+              d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
+              clipRule='evenodd'
+            />
+          </svg>
+        </Button>
+      ) : null}
     </div>
   );
 }

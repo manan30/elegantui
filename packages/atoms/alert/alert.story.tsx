@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { ControlsAddon } from '@vitebook/preact/addons';
+import {
+  ControlsAddon,
+  eventCallback,
+  EventsAddon
+} from '@vitebook/preact/addons';
 import Alert from '.';
 
 import type { PageMeta } from '@vitebook/client';
@@ -16,11 +20,17 @@ function AlertStory() {
   const [text, setText] = useState(
     'Do dolor exercitation consectetur do ullamco est ut et laboris.'
   );
+  const [dismissible, setDismissible] = useState(false);
 
   return (
     <>
       <div className='w-96'>
-        <Alert variant={variant} appearance={appearance}>
+        <Alert
+          variant={variant}
+          appearance={appearance}
+          dismissible={dismissible}
+          dismissHandler={eventCallback}
+        >
           {text}
         </Alert>
       </div>
@@ -75,7 +85,19 @@ function AlertStory() {
             ))}
           </select>
         </div>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
+        >
+          <label>Dismissible</label>
+          <input
+            style={{ marginLeft: '0.5rem' }}
+            type='checkbox'
+            checked={dismissible}
+            onChange={(e) => setDismissible(e.target.checked)}
+          />
+        </div>
       </ControlsAddon>
+      <EventsAddon />
     </>
   );
 }
