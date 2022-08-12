@@ -6,8 +6,9 @@
     "format:check": { "outputs": [] },
     "format:fix": { "outputs": [] },
     "typecheck": { "outputs": [] },
-    "dev": {
-      "cache": false
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
     }
   }
 }
