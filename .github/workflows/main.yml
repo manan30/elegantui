@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  typecheck:
+    name: Typecheck
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,3 +20,5 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint and Format Check
         run: yarn lint:check && yarn format:check
+      - name: Check Types
+        run: yarn typecheck
