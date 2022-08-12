@@ -65,6 +65,7 @@
     "lint:fix": "turbo run lint:fix",
     "format:check": "turbo run format:check",
     "format:fix": "turbo run format:fix",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "build": "turbo run build"
   }
 }
