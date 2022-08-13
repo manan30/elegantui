@@ -67,7 +67,7 @@
     "format:fix": "turbo run format:fix",
     "typecheck": "turbo run typecheck",
     "build:packages": "turbo run build --filter=!@elegantui/docs",
-    "changesets:version": "yarn changeset version",
+    "changeset:version": "yarn changeset version",
     "prerelease": "yarn build:packages",
     "release": "yarn changeset publish"
   },

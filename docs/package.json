@@ -1,6 +1,7 @@
 {
   "name": "@elegantui/docs",
   "version": "0.0.0",
+  "private": true,
   "description": "ElegantUI Docs",
   "homepage": "https://github.com/manan30/elegantui/packages/docs#readme",
   "bugs": {
