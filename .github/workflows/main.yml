@@ -19,14 +19,18 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Using Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Lint and Format Check
         run: yarn lint:check && yarn format:check
+
       - name: Check Types
         run: yarn typecheck
   build:
@@ -40,11 +44,14 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Using Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Build packages
         run: yarn build:packages
