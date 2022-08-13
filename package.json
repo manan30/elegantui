@@ -66,6 +66,11 @@
     "format:check": "turbo run format:check",
     "format:fix": "turbo run format:fix",
     "typecheck": "turbo run typecheck",
-    "build:packages": "turbo run build --filter=!@elegantui/docs"
+    "build:packages": "turbo run build --filter=!@elegantui/docs",
+    "version": "yarn changeset version",
+    "publish": "yarn changeset publish"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.24.2"
   }
 }
