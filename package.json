@@ -60,7 +60,7 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "is-ci || husky install",
     "lint:check": "turbo run lint:check",
     "lint:fix": "turbo run lint:fix",
     "format:check": "turbo run format:check",
@@ -72,6 +72,7 @@
     "release": "yarn changeset publish"
   },
   "dependencies": {
-    "@changesets/cli": "^2.24.2"
+    "@changesets/cli": "^2.24.2",
+    "is-ci": "^3.0.1"
   }
 }
