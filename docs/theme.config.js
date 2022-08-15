@@ -1,18 +1,14 @@
 /* eslint-disable react/react-in-jsx-scope */
 export default {
   projectLink: 'https://github.com/manan30/elegantui',
-  github: 'https://github.com/manan30/elegantui',
-  docsRepositoryBase:
-    'https://github.com/manan30/elegantui/tree/main/docs/pages',
   titleSuffix: ' – ElegantUI',
   nextLinks: true,
   prevLinks: true,
   search: true,
-  customSearch: null, // customizable, you can use algolia for example
   darkMode: true,
   footer: true,
-  footerText: `MIT ${new Date().getFullYear()} © Manan Joshi.`,
-  footerEditLink: ``,
+  footerText: `MIT ${new Date().getFullYear()} © Manan Joshi`,
+  footerEditLink: '',
   logo: <span>ElegantUI - React component library</span>,
   head: (
     <>

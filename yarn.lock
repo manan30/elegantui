@@ -592,10 +592,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@elegantui/forms@workspace:*":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@elegantui/forms/-/forms-0.4.0.tgz#cdf5017894f5fc5274a98e85d9466ef9686021a0"
-  integrity sha512-EKbDRyv3sc+p0VniMbYKxXHBZ/KvsYBF4bo3O7bhFM1306HQiCX6OOkQA9FdApxqMtOAZAMK6jvkCesOH55Svg==
+"@elegantui/forms@0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@elegantui/forms/-/forms-0.0.0.tgz#a75fa70e526d0c925a7db4b7de18e22187eae25a"
+  integrity sha512-X3DjKP6O53NoGnHaPTO7ucgnC1ts6jU5jnEHDBsj9P1vnvCbRBF9Erc/Z2BnXvfxDeSOu2nIhMMEtISkHmnIWw==
 
 "@esbuild/linux-loong64@0.14.53":
   version "0.14.53"

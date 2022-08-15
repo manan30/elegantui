@@ -20,7 +20,7 @@
     "build": "yarn next build"
   },
   "dependencies": {
-    "@elegantui/forms": "workspace:*",
+    "@elegantui/forms": "0.0.0",
     "next": "^12.2.4",
     "nextra": "^1.1.0",
     "nextra-theme-docs": "^1.2.6",
