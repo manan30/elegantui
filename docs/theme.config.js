@@ -9,7 +9,7 @@ export default {
   footer: true,
   footerText: `MIT ${new Date().getFullYear()} © Manan Joshi`,
   footerEditLink: '',
-  logo: <span>ElegantUI - React component library</span>,
+  logo: <span>ElegantUI</span>,
   head: (
     <>
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />

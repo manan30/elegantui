@@ -2,4 +2,64 @@
 title: Button
 ---
 
-## Button
+import { Button } from '@elegantui/atoms';
+
+# Button
+
+Buttons allow users to perform actions and choose with a single tap.
+
+## Usage
+
+```jsx
+import { Button } from '@elegantui/button';
+```
+
+### Default
+
+<Button style={{ marginTop: '1rem' }}>Hello Friend</Button>
+
+```js
+import { Button } from '@elegantui/atoms';
+
+export default function App() {
+  return <Button>Hello Friend</Button>;
+}
+```
+
+### Variants
+
+Button component is available in six variants
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Button variant='primary'>Primary</Button>
+  <Button variant='secondary'>Secondary</Button>
+  <Button variant='error'>Error</Button>
+  <Button variant='warning'>Warning</Button>
+  <Button variant='success'>Success</Button>
+  <Button>Default</Button>
+</div>
+
+```js
+import { Button } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Button variant='primary'>Primary</Button>
+      <Button variant='secondary'>Secondary</Button>
+      <Button variant='error'>Error</Button>
+      <Button variant='warning'>Warning</Button>
+      <Button variant='success'>Success</Button>
+      <Button>Default</Button>
+    </>
+  );
+}
+```
