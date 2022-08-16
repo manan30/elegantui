@@ -1,5 +1,6 @@
 {
-  "button": "Button",
+  "alert": "Alert",
   "badge": "Badge",
-  "alert": "Alert"
+  "button": "Button",
+  "card": "Card"
 }

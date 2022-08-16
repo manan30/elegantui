@@ -1,0 +1,112 @@
+---
+title: Card
+---
+
+import { Card } from '@elegantui/atoms';
+
+# Card
+
+Card is a container for text, photos, and actions in the context of a single subject.
+
+## Usage
+
+```jsx
+import { Card } from '@elegantui/atoms';
+```
+
+### Default
+
+<Card style={{ marginTop: '1rem', width: '50%', height: '10rem' }}>
+  <h3 style={{ marginTop: '0', color: 'gray' }}>A Basic Card</h3>
+</Card>
+
+```js
+import { Card } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <Card style={{ marginTop: '1rem', width: '50%', height: '10rem' }}>
+      <h3 style={{ marginTop: '0', color: 'gray' }}>A Basic Card</h3>
+    </Card>
+  );
+}
+```
+
+### Variant
+
+Card component is available in three variants
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Card
+    style={{ color: 'gray', width: '50%', height: '5rem' }}
+    variant='raised'
+  >
+    A Raised Card
+  </Card>
+  <Card style={{ color: 'gray', width: '50%', height: '5rem' }} variant='flat'>
+    A Flat Card
+  </Card>
+  <Card
+    style={{ color: 'gray', width: '50%', height: '5rem' }}
+    variant='bordered'
+  >
+    A Bordered Card
+  </Card>
+</div>
+
+```js
+import { Card } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Card
+        style={{ color: 'gray', width: '50%', height: '5rem' }}
+        variant='raised'
+      >
+        A Raised Card
+      </Card>
+      <Card
+        style={{ color: 'gray', width: '50%', height: '5rem' }}
+        variant='flat'
+      >
+        A Flat Card
+      </Card>
+      <Card
+        style={{ color: 'gray', width: '50%', height: '5rem' }}
+        variant='bordered'
+      >
+        A Bordered Card
+      </Card>
+    </>
+  );
+}
+```
+
+### Rounded
+
+Card component can have rounded borders by using the `rounded` prop.
+
+<Card style={{ marginTop: '1rem', width: '50%', height: '10rem' }} rounded>
+  <h3 style={{ marginTop: '0', color: 'gray' }}>A Basic Card</h3>
+</Card>
+
+#### Available Props
+
+---
+
+| **Prop**      | **Values**                                      | **Default** |
+| ------------- | ----------------------------------------------- | ----------- |
+| **children**  | `React.ReactNode`                               | --          |
+| **variant**   | <code>raised &#124; flat &#124; bordered</code> | `flat`      |
+| **rounded**   | <code>true &#124; false </code>                 | `true`      |
+| **style**     | `React.CSSProperties`                           | --          |
+| **className** | `string`                                        | --          |
