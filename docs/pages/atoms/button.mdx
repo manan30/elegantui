@@ -157,3 +157,64 @@ export default function App() {
   );
 }
 ```
+
+### States
+
+Button component can be configured to have loading and disabled states
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Button variant='primary' style={{ marginTop: '1rem' }} loading>
+    Loading
+  </Button>
+  <Button variant='primary' style={{ marginTop: '1rem' }} disabled>
+    Disabled
+  </Button>
+</div>
+
+```js
+import { Button } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Button variant='primary' style={{ marginTop: '1rem' }} loading>
+        Loading
+      </Button>
+      <Button variant='primary' style={{ marginTop: '1rem' }} disabled>
+        Disabled
+      </Button>
+    </>
+  );
+}
+```
+
+### Custom styles
+
+Button component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop
+
+<Button
+  style={{ marginTop: '1rem', backgroundColor: 'chocolate', color: 'white' }}
+>
+  Custom Styles
+</Button>
+
+#### Available Props
+
+---
+
+| **Prop**       | **Values**                                                                                      | **Default** |
+| -------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **variant**    | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
+| **size**       | <code>sm &#124; md &#124; lg </code>                                                            | `md`        |
+| **appearance** | <code>solid &#124; outline &#124; link &#124; ghost </code>                                     | `solid`     |
+| **disabled**   | <code>true &#124; false</code>                                                                  | `false`     |
+| **loading**    | <code>true &#124; false</code>                                                                  | `false`     |
+| **...rest**    | `React.ButtonHTMLAttributes<HTMLButtonElement> `                                                | --          |
