@@ -1,0 +1,110 @@
+---
+title: Badge
+---
+
+import { Badge } from '@elegantui/atoms';
+
+# Badge
+
+Badge allow users to differentiate or group items.
+
+## Usage
+
+```jsx
+import { Badge } from '@elegantui/atoms';
+```
+
+### Default
+
+<div style={{ marginTop: '1rem', width: '8rem' }}>
+  <Badge text='Hello Friend' />
+</div>
+
+```js
+import { Badge } from '@elegantui/atoms';
+
+export default function App() {
+  return <Badge text='Hello Friend' />;
+}
+```
+
+### Appearance
+
+Badge component is available in six appearances
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Badge appearance='primary' text='Primary' />
+  <Badge appearance='secondary' text='Secondary' />
+  <Badge appearance='error' text='Error' />
+  <Badge appearance='warning' text='Warning' />
+  <Badge appearance='success' text='Success' />
+  <Badge text='Default' />
+</div>
+
+```js
+import { Badge } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Badge appearance='primary' text='Primary' />
+      <Badge appearance='secondary' text='Secondary' />
+      <Badge appearance='error' text='Error' />
+      <Badge appearance='warning' text='Warning' />
+      <Badge appearance='success' text='Success' />
+      <Badge text='Default' />
+    </>
+  );
+}
+```
+
+### Sizes
+
+Badge component is available in three sizes
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Badge size='sm' variant='primary' text='Small' />
+  <Badge size='md' variant='primary' text='Medium' />
+  <Badge size='lg' variant='primary' text='Large' />
+</div>
+
+```js
+import { Badge } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Badge size='sm' variant='primary' text='Small' />
+      <Badge size='md' variant='primary' text='Medium' />
+      <Badge size='lg' variant='primary' text='Large' />
+    </>
+  );
+}
+```
+
+#### Available Props
+
+---
+
+| **Prop**       | **Values**                                                                                      | **Default** |
+| -------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **appearance** | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
+| **size**       | <code>sm &#124; md &#124; lg </code>                                                            | `md`        |
+| **text**       | `string`                                                                                        | --          |
+| **className**  | `string`                                                                                        | --          |
