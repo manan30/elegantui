@@ -1,0 +1,112 @@
+---
+title: Loading Spinner
+---
+
+import { LoadingSpinner, Card } from '@elegantui/atoms';
+
+# Loading Spinner
+
+Loading Spinner allows users to get some indication when an async action is being performed.
+
+## Usage
+
+```jsx
+import { LoadingSpinner, Card } from '@elegantui/atoms';
+```
+
+### Default
+
+<div style={{ marginTop: '1rem' }}>
+  <LoadingSpinner />
+</div>
+
+```js
+import { LoadingSpinner } from '@elegantui/atoms';
+
+export default function App() {
+  return <LoadingSpinner />;
+}
+```
+
+### Variants
+
+LoadingSpinner component is available in six variants
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <LoadingSpinner variant='primary' />
+  <LoadingSpinner variant='secondary' />
+  <LoadingSpinner variant='error' />
+  <LoadingSpinner variant='warning' />
+  <LoadingSpinner variant='success' />
+  <LoadingSpinner />
+</div>
+
+```js
+import { Badge } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <LoadingSpinner variant='primary' />
+      <LoadingSpinner variant='secondary' />
+      <LoadingSpinner variant='error' />
+      <LoadingSpinner variant='warning' />
+      <LoadingSpinner variant='success' />
+      <LoadingSpinner />
+    </>
+  );
+}
+```
+
+### Sizes
+
+LoadingSpinner component is available in four sizes
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <LoadingSpinner size='sm' variant='primary' />
+  <LoadingSpinner size='md' variant='primary' />
+  <LoadingSpinner size='lg' variant='primary' />
+  <LoadingSpinner size='xl' variant='primary' />
+</div>
+
+```js
+import { LoadingSpinner } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <LoadingSpinner size='sm' variant='primary' />
+      <LoadingSpinner size='md' variant='primary' />
+      <LoadingSpinner size='lg' variant='primary' />
+      <LoadingSpinner size='xl' variant='primary' />
+    </>
+  );
+}
+```
+
+#### Available Props
+
+---
+
+| **Prop**      | **Values**                                                                                      | **Default** |
+| ------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **variant**   | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
+| **size**      | <code>sm &#124; md &#124; lg &#124; xl </code>                                                  | `sm`        |
+| **style**     | `React.CSSProperties`                                                                           | --          |
+| **className** | `string`                                                                                        | --          |
