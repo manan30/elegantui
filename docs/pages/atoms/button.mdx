@@ -63,3 +63,97 @@ export default function App() {
   );
 }
 ```
+
+### Sizes
+
+Button component is available in three sizes
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Button size='sm' variant='primary'>
+    Small
+  </Button>
+  <Button size='md' variant='primary'>
+    Medium
+  </Button>
+  <Button size='lg' variant='primary'>
+    Large
+  </Button>
+</div>
+
+```js
+import { Button } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Button size='sm' variant='primary'>
+        Small
+      </Button>
+      <Button size='md' variant='primary'>
+        Medium
+      </Button>
+      <Button size='lg' variant='primary'>
+        Large
+      </Button>
+    </>
+  );
+}
+```
+
+### Appearances
+
+Button component is available in four appearances
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    overflowX: 'auto'
+  }}
+>
+  <Button variant='primary' appearance='solid'>
+    Solid
+  </Button>
+  <Button variant='primary' appearance='outline'>
+    Outline
+  </Button>
+  <Button variant='primary' appearance='link'>
+    Link
+  </Button>
+  <Button variant='primary' appearance='ghost'>
+    Ghost
+  </Button>
+</div>
+
+```js
+import { Button } from '@elegantui/atoms';
+
+export default function App() {
+  return (
+    <>
+      <Button variant='primary' appearance='solid'>
+        Solid
+      </Button>
+      <Button variant='primary' appearance='outline'>
+        Outline
+      </Button>
+      <Button variant='primary' appearance='link'>
+        Link
+      </Button>
+      <Button variant='primary' appearance='ghost'>
+        Ghost
+      </Button>
+    </>
+  );
+}
+```

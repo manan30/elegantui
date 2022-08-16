@@ -24,6 +24,6 @@ module.exports = {
         default: 'currentColor'
       }
     }
-  },
-  prefix: 'tw-elegantui'
+  }
+  // prefix: 'tw-elegantui'
 };
