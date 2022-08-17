@@ -592,11 +592,6 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@elegantui/forms@0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@elegantui/forms/-/forms-0.0.0.tgz#a75fa70e526d0c925a7db4b7de18e22187eae25a"
-  integrity sha512-X3DjKP6O53NoGnHaPTO7ucgnC1ts6jU5jnEHDBsj9P1vnvCbRBF9Erc/Z2BnXvfxDeSOu2nIhMMEtISkHmnIWw==
-
 "@esbuild/linux-loong64@0.14.53":
   version "0.14.53"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.53.tgz#251b4cd6760fadb4d68a05815e6dc5e432d69cd6"

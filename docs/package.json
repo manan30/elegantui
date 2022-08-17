@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@elegantui/atoms": "^0.5.3",
-    "@elegantui/forms": "0.0.0",
+    "@elegantui/forms": "^0.4.2",
     "next": "^12.2.4",
     "nextra": "^1.1.0",
     "nextra-theme-docs": "^1.2.6",
