@@ -2,8 +2,8 @@
 /* eslint-disable react/prop-types */
 import NextScript from 'next/script';
 
-import '@elegantui/atoms/dist/styles.css';
 import '@elegantui/forms/dist/styles.css';
+import '@elegantui/atoms/dist/styles.css';
 import 'nextra-theme-docs/style.css';
 import '../styles/global.css';
 

@@ -1,0 +1,210 @@
+---
+title: Checkbox
+---
+
+import { Checkbox } from '@elegantui/forms';
+
+# Checkbox
+
+Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+
+## Usage
+
+```jsx
+import { Checkbox } from '@elegantui/forms';
+```
+
+### Default
+
+<div style={{ marginTop: '1rem', width: '15rem' }}>
+  <Checkbox name='default' checkboxText='Checkbox' value='checkbox' />
+</div>
+
+```js
+import { Checkbox } from '@elegantui/forms';
+
+export default function App() {
+  return <Checkbox name='default' checkboxText='Checkbox' value='checkbox' />;
+}
+```
+
+### Variants
+
+Checkbox component is available in six variants
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    width: '15rem'
+  }}
+>
+  <Checkbox
+    name='primary'
+    value='primary'
+    checkboxText='Primary'
+    variant='primary'
+  />
+  <Checkbox
+    name='secondary'
+    value='secondary'
+    checkboxText='Secondary'
+    variant='secondary'
+  />
+  <Checkbox name='error' value='error' checkboxText='Error' variant='error' />
+  <Checkbox
+    name='success'
+    value='success'
+    checkboxText='Success'
+    variant='success'
+  />
+  <Checkbox
+    name='warning'
+    value='warning'
+    checkboxText='Warning'
+    variant='warning'
+  />
+  <Checkbox
+    name='default'
+    value='default'
+    checkboxText='Default'
+    variant='default'
+  />
+</div>
+
+```js
+import { Checkbox } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <>
+      <Checkbox
+        name='primary'
+        value='primary'
+        checkboxText='Primary'
+        variant='primary'
+      />
+      <Checkbox
+        name='secondary'
+        value='secondary'
+        checkboxText='Secondary'
+        variant='secondary'
+      />
+      <Checkbox
+        name='error'
+        value='error'
+        checkboxText='Error'
+        variant='error'
+      />
+      <Checkbox
+        name='success'
+        value='success'
+        checkboxText='Success'
+        variant='success'
+      />
+      <Checkbox
+        name='warning'
+        value='warning'
+        checkboxText='Warning'
+        variant='warning'
+      />
+      <Checkbox
+        name='default'
+        value='default'
+        checkboxText='Default'
+        variant='default'
+      />
+    </>
+  );
+}
+```
+
+### Checkbox Text
+
+Checkbox component allows adding text next to the checkbox using the `checkboxText` prop.
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    width: '15rem'
+  }}
+>
+  <Checkbox
+    name='primary'
+    value='primary'
+    checkboxText='Primary'
+    variant='primary'
+  />
+</div>
+
+```js
+import { Checkbox } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <Checkbox
+      name='primary'
+      value='primary'
+      checkboxText='Primary'
+      variant='primary'
+    />
+  );
+}
+```
+
+### Disabled state
+
+Checkbox component can be configured to have a disabled state by using the `disabled` prop
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    width: '15rem'
+  }}
+>
+  <Checkbox
+    name='primary'
+    value='primary'
+    checkboxText='Primary'
+    variant='primary'
+    disabled
+  />
+</div>
+
+```js
+import { Checkbox } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <Checkbox
+      name='primary'
+      value='primary'
+      checkboxText='Primary'
+      variant='primary'
+      disabled
+    />
+  );
+}
+```
+
+#### Available Props
+
+---
+
+| **Prop**         | **Values**                                                                                      | **Default** |
+| ---------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **name**         | `string`                                                                                        | --          |
+| **checkboxText** | `string`                                                                                        | --          |
+| **value**        | `string`                                                                                        | --          |
+| **onChange**     | `() => void`                                                                                    | --          |
+| **variant**      | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `primary`   |
+| **disabled**     | <code>true &#124; false</code>                                                                  | `false`     |
+| **className**    | `string`                                                                                        | --          |
