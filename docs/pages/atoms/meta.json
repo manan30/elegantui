@@ -3,5 +3,6 @@
   "badge": "Badge",
   "button": "Button",
   "card": "Card",
+  "dialog": "Dialog",
   "loading-spinner": "Loading Spinner"
 }

@@ -1,0 +1,48 @@
+---
+title: Dialog
+---
+
+import Dialog from '../../components/Dialog.tsx';
+
+# Dialog
+
+Displays a dialog with a custom content that requires attention or provides additional information.
+
+## Usage
+
+```jsx
+import { Dialog } from '@elegantui/atoms';
+```
+
+### Default
+
+<Dialog />
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <>
+      <Button style={{ marginTop: '1rem' }} onClick={() => setOpen(true)}>
+        Open Dialog
+      </Button>
+      <Dialog open={open} dismissHandler={() => setOpen(false)}>
+        <h2
+          className='text-base font-semibold uppercase tracking-wide text-indigo-600'
+          style={{ marginTop: 0 }}
+        >
+          Transactions
+        </h2>
+        <p className='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl'>
+          A better way to send money
+        </p>
+        <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
+          Lorem ipsum dolor sit amet new new new card
+        </p>
+      </Dialog>
+    </>
+  );
+}
+```
