@@ -1,0 +1,217 @@
+---
+title: Radio Button
+---
+
+import { RadioButton } from '@elegantui/forms';
+
+# Radio Button
+
+Radio buttons allow users to select a single items from a list of individual items.
+
+## Usage
+
+```jsx
+import { RadioButton } from '@elegantui/forms';
+```
+
+### Default
+
+<div style={{ marginTop: '1rem', width: '15rem' }}>
+  <RadioButton name='default' radioButtonText='Radio' value='radio' />
+</div>
+
+```js
+import { RadioButton } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <RadioButton name='default' radioButtonText='RadioButton' value='radio' />
+  );
+}
+```
+
+### Variants
+
+RadioButton component is available in six variants
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    width: '15rem'
+  }}
+>
+  <RadioButton
+    name='primary'
+    value='primary'
+    radioButtonText='Primary'
+    variant='primary'
+  />
+  <RadioButton
+    name='secondary'
+    value='secondary'
+    radioButtonText='Secondary'
+    variant='secondary'
+  />
+  <RadioButton
+    name='error'
+    value='error'
+    radioButtonText='Error'
+    variant='error'
+  />
+  <RadioButton
+    name='success'
+    value='success'
+    radioButtonText='Success'
+    variant='success'
+  />
+  <RadioButton
+    name='warning'
+    value='warning'
+    radioButtonText='Warning'
+    variant='warning'
+  />
+  <RadioButton
+    name='default-v'
+    value='default'
+    radioButtonText='Default'
+    variant='default'
+  />
+</div>
+
+```js
+import { RadioButton } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <>
+      <RadioButton
+        name='primary'
+        value='primary'
+        radioButtonText='Primary'
+        variant='primary'
+      />
+      <RadioButton
+        name='secondary'
+        value='secondary'
+        radioButtonText='Secondary'
+        variant='secondary'
+      />
+      <RadioButton
+        name='error'
+        value='error'
+        radioButtonText='Error'
+        variant='error'
+      />
+      <RadioButton
+        name='success'
+        value='success'
+        radioButtonText='Success'
+        variant='success'
+      />
+      <RadioButton
+        name='warning'
+        value='warning'
+        radioButtonText='Warning'
+        variant='warning'
+      />
+      <RadioButton
+        name='default'
+        value='default'
+        radioButtonText='Default'
+        variant='default'
+      />
+    </>
+  );
+}
+```
+
+### RadioButton Text
+
+RadioButton component allows adding text next to the radio button using the `radioButtonText` prop.
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    width: '15rem'
+  }}
+>
+  <RadioButton
+    name='primary-t'
+    value='primary'
+    radioButtonText='Primary'
+    variant='primary'
+  />
+</div>
+
+```js
+import { RadioButton } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <RadioButton
+      name='primary'
+      value='primary'
+      radioButtonText='Primary'
+      variant='primary'
+    />
+  );
+}
+```
+
+### Disabled state
+
+RadioButton component can be configured to have a disabled state by using the `disabled` prop
+
+<div
+  style={{
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    width: '15rem'
+  }}
+>
+  <RadioButton
+    name='primary-t'
+    value='primary'
+    radioButtonText='Primary'
+    variant='primary'
+    disabled
+  />
+</div>
+
+```js
+import { RadioButton } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <RadioButton
+      name='primary'
+      value='primary'
+      radioButtonText='Primary'
+      variant='primary'
+      disabled
+    />
+  );
+}
+```
+
+#### Available Props
+
+---
+
+| **Prop**            | **Values**                                                                                      | **Default** |
+| ------------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **name**            | `string`                                                                                        | --          |
+| **radioButtonText** | `string`                                                                                        | --          |
+| **value**           | `string`                                                                                        | --          |
+| **onChange**        | `() => void`                                                                                    | --          |
+| **variant**         | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `primary`   |
+| **disabled**        | <code>true &#124; false</code>                                                                  | `false`     |
+| **className**       | `string`                                                                                        | --          |
