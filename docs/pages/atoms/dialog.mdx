@@ -2,6 +2,7 @@
 title: Dialog
 ---
 
+import Callout from 'nextra-theme-docs/callout';
 import Dialog from '../../components/Dialog.tsx';
 
 # Dialog
@@ -23,6 +24,7 @@ import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
+
   return (
     <>
       <Button style={{ marginTop: '1rem' }} onClick={() => setOpen(true)}>
@@ -30,19 +32,160 @@ export default function App() {
       </Button>
       <Dialog open={open} dismissHandler={() => setOpen(false)}>
         <h2
-          className='text-base font-semibold uppercase tracking-wide text-indigo-600'
-          style={{ marginTop: 0 }}
+          style={{
+            marginTop: 0,
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            color: 'black'
+          }}
         >
           Transactions
         </h2>
-        <p className='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl'>
+        <p style={{ marginTop: '0.5rem', color: 'teal' }}>
           A better way to send money
-        </p>
-        <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
-          Lorem ipsum dolor sit amet new new new card
         </p>
       </Dialog>
     </>
+  );
+}
+```
+
+### Open
+
+Dialog component requires an `open` prop that will determine the open and close state of the dialog.
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Dialog open={open}>
+      <h2>Transactions</h2>
+    </Dialog>
+  );
+}
+```
+
+### DismissHandler
+
+Dialog component requires a callback function as a `dismissHandler` prop which is fired when the dialog component is dismissed
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Dialog open={open} dismissHandler={() => setOpen(false)}>
+      <h2>Transactions</h2>
+    </Dialog>
+  );
+}
+```
+
+### Title
+
+Dialog component accepts an optional `title` prop which sets the title of the dialog.
+
+<Dialog title='My Dialog' />
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Dialog open={open} dismissHandler={() => setOpen(false)} title='My Dialog'>
+      <h2>Transactions</h2>
+    </Dialog>
+  );
+}
+```
+
+### Disabling Dialog dismissal on Esc
+
+The dialog component is fully accessible and clicking outside the dialog component will dismiss. We might want to disable this behavior in certain scenarios. To achieve this you can pass a `disableCloseOnEsc` prop
+
+<Dialog title='My Dialog' disableCloseOnEsc />
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Dialog
+      open={open}
+      dismissHandler={() => setOpen(false)}
+      title='My Dialog'
+      disableCloseOnEsc
+    >
+      <h2>Transactions</h2>
+    </Dialog>
+  );
+}
+```
+
+### Disabling Dialog close button
+
+The dialog component can also be dismissed by using the close button in the dialog title. We might want to disable this behavior in certain scenarios. To achieve this you can pass a `disableCloseButton` prop
+
+<Callout emoji='⚠️'>
+  Setting **disableCloseButton** to **true** will disable clicking outside the
+  dialog as well.
+</Callout>
+
+<Dialog title='My Dialog' disableCloseButton />
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Dialog
+      open={open}
+      dismissHandler={() => setOpen(false)}
+      title='My Dialog'
+      disableCloseButton
+    >
+      <h2>Transactions</h2>
+    </Dialog>
+  );
+}
+```
+
+### Sizes
+
+Dialog component is available in four sizes
+
+<Dialog title='Small' size='sm' />
+<Dialog title='Medium' size='md' />
+<Dialog title='Large' size='lg' />
+<Dialog title='Extra Large' size='xl' />
+
+```js
+import { Button, Dialog } from '@elegantui/atoms';
+
+export default function App() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Dialog
+      open={open}
+      dismissHandler={() => setOpen(false)}
+      title='My Dialog'
+      disableCloseOnEsc
+      size='sm' // 'md' || 'lg' || 'xl'
+    >
+      <h2>Transactions</h2>
+    </Dialog>
   );
 }
 ```
