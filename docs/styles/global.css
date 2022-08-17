@@ -1,3 +1,9 @@
 [role='dialog'] {
   z-index: 100;
 }
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
