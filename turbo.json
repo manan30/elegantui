@@ -6,6 +6,8 @@
     "format:check": { "outputs": [] },
     "format:fix": { "outputs": [] },
     "typecheck": { "outputs": [] },
+    "vitebook:dev": { "outputs": [] },
+    "dev": { "outputs": [] },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
