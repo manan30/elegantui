@@ -14,13 +14,13 @@ Badge allow users to differentiate or group items.
 import { Badge } from '@elegantui/atoms';
 ```
 
-### Default
+## Basic Example
 
 <div style={{ marginTop: '1rem', width: '8rem' }}>
   <Badge text='Hello Friend' />
 </div>
 
-```js
+```jsx
 import { Badge } from '@elegantui/atoms';
 
 export default function App() {
@@ -30,7 +30,7 @@ export default function App() {
 
 ### Appearance
 
-Badge component is available in six appearances
+Badge component is available in six appearances.
 
 <div
   style={{
@@ -49,26 +49,22 @@ Badge component is available in six appearances
   <Badge text='Default' />
 </div>
 
-```js
+```jsx
 import { Badge } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <Badge appearance='primary' text='Primary' />
-      <Badge appearance='secondary' text='Secondary' />
-      <Badge appearance='error' text='Error' />
-      <Badge appearance='warning' text='Warning' />
-      <Badge appearance='success' text='Success' />
-      <Badge text='Default' />
-    </>
+    <Badge
+      appearance='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+      text='Hello Friend'
+    />
   );
 }
 ```
 
 ### Sizes
 
-Badge component is available in three sizes
+Badge component is available in three sizes.
 
 <div
   style={{
@@ -84,16 +80,16 @@ Badge component is available in three sizes
   <Badge size='lg' variant='primary' text='Large' />
 </div>
 
-```js
+```jsx
 import { Badge } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <Badge size='sm' variant='primary' text='Small' />
-      <Badge size='md' variant='primary' text='Medium' />
-      <Badge size='lg' variant='primary' text='Large' />
-    </>
+    <Badge
+      size='sm' // 'md' | 'lg'
+      variant='primary'
+      text='Hello Friend'
+    />
   );
 }
 ```

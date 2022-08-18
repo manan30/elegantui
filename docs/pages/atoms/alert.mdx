@@ -14,13 +14,13 @@ Alert allow users to be notified about certain events.
 import { Alert } from '@elegantui/atoms';
 ```
 
-### Default
+## Basic Example
 
 <div style={{ marginTop: '1rem' }}>
   <Alert>Hello Friend</Alert>
 </div>
 
-```js
+```jsx
 import { Alert } from '@elegantui/atoms';
 
 export default function App() {
@@ -28,9 +28,9 @@ export default function App() {
 }
 ```
 
-### Variant
+### Variants
 
-Alert component is available in three variants
+Alert component is available in three variants.
 
 <div
   style={{
@@ -46,23 +46,23 @@ Alert component is available in three variants
   <Alert variant='bordered'>Bordered</Alert>
 </div>
 
-```js
+```jsx
 import { Alert } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <Alert variant='raised'>Raised</Alert>
-      <Alert variant='flat'>Flat</Alert>
-      <Alert variant='bordered'>Bordered</Alert>
-    </>
+    <Alert
+      variant='raised' // 'flat' | 'bordered'
+    >
+      Hello Friend
+    </Alert>
   );
 }
 ```
 
 ### Appearance
 
-Alert component is available in six appearances
+Alert component is available in six appearances.
 
 <div
   style={{
@@ -81,26 +81,23 @@ Alert component is available in six appearances
   <Alert>Default</Alert>
 </div>
 
-```js
+```jsx
 import { Alert } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <Alert appearance='primary'>Primary</Alert>
-      <Alert appearance='secondary'>Secondary</Alert>
-      <Alert appearance='error'>Error</Alert>
-      <Alert appearance='warning'>Warning</Alert>
-      <Alert appearance='success'>Success</Alert>
-      <Alert>Default</Alert>
-    </>
+    <Alert
+      appearance='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    >
+      Hello Friend
+    </Alert>
   );
 }
 ```
 
 ### Dismissble
 
-Alert can be dimissed by adding a `dismissible` and `dismissHandler` prop. The `dismissHandler` is a callback function that is called when the `X` button inside the `Alert` is clicked
+Alert can be dimissed by adding a `dismissible` and `dismissHandler` prop. The `dismissHandler` is a callback function that is called when the `X` button inside the `Alert` is clicked.
 
 <div
   style={{
@@ -126,7 +123,7 @@ export default function App() {
 
 ### Custom Icon
 
-Alert component supports an optional `customIcon` prop to display any icon on the left of the `Alert`
+Alert component supports an optional `customIcon` prop to display any icon on the left of the `Alert`.
 
 <div
   style={{
@@ -159,7 +156,7 @@ Alert component supports an optional `customIcon` prop to display any icon on th
   </Alert>
 </div>
 
-```js
+```jsx
 import { Alert } from '@elegantui/atoms';
 
 export default function App() {

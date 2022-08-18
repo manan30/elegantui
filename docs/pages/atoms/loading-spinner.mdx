@@ -14,7 +14,7 @@ Loading Spinner component allows users to get some indication when an async acti
 import { LoadingSpinner } from '@elegantui/atoms';
 ```
 
-### Default
+## Basic Example
 
 <div style={{ marginTop: '1rem' }}>
   <LoadingSpinner />
@@ -30,7 +30,7 @@ export default function App() {
 
 ### Variants
 
-LoadingSpinner component is available in six variants
+LoadingSpinner component is available in six variants.
 
 <div
   style={{
@@ -50,25 +50,20 @@ LoadingSpinner component is available in six variants
 </div>
 
 ```js
-import { Badge } from '@elegantui/atoms';
+import { LoadingSpinner } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <LoadingSpinner variant='primary' />
-      <LoadingSpinner variant='secondary' />
-      <LoadingSpinner variant='error' />
-      <LoadingSpinner variant='warning' />
-      <LoadingSpinner variant='success' />
-      <LoadingSpinner />
-    </>
+    <LoadingSpinner
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    />
   );
 }
 ```
 
 ### Sizes
 
-LoadingSpinner component is available in four sizes
+LoadingSpinner component is available in four sizes.
 
 <div
   style={{
@@ -90,12 +85,10 @@ import { LoadingSpinner } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <LoadingSpinner size='sm' variant='primary' />
-      <LoadingSpinner size='md' variant='primary' />
-      <LoadingSpinner size='lg' variant='primary' />
-      <LoadingSpinner size='xl' variant='primary' />
-    </>
+    <LoadingSpinner
+      size='sm' // 'md' | 'lg' | 'xl'
+      variant='primary'
+    />
   );
 }
 ```

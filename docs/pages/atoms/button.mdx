@@ -14,11 +14,11 @@ Buttons allow users to perform actions and choose with a single tap.
 import { Button } from '@elegantui/atoms';
 ```
 
-### Default
+## Basic Example
 
 <Button style={{ marginTop: '1rem' }}>Hello Friend</Button>
 
-```js
+```jsx
 import { Button } from '@elegantui/atoms';
 
 export default function App() {
@@ -28,7 +28,7 @@ export default function App() {
 
 ### Variants
 
-Button component is available in six variants
+Button component is available in six variants.
 
 <div
   style={{
@@ -47,26 +47,23 @@ Button component is available in six variants
   <Button>Default</Button>
 </div>
 
-```js
+```jsx
 import { Button } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <Button variant='primary'>Primary</Button>
-      <Button variant='secondary'>Secondary</Button>
-      <Button variant='error'>Error</Button>
-      <Button variant='warning'>Warning</Button>
-      <Button variant='success'>Success</Button>
-      <Button>Default</Button>
-    </>
+    <Button
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    >
+      Hello Friend
+    </Button>
   );
 }
 ```
 
 ### Sizes
 
-Button component is available in three sizes
+Button component is available in three sizes.
 
 <div
   style={{
@@ -88,29 +85,24 @@ Button component is available in three sizes
   </Button>
 </div>
 
-```js
+```jsx
 import { Button } from '@elegantui/atoms';
 
 export default function App() {
   return (
-    <>
-      <Button size='sm' variant='primary'>
-        Small
-      </Button>
-      <Button size='md' variant='primary'>
-        Medium
-      </Button>
-      <Button size='lg' variant='primary'>
-        Large
-      </Button>
-    </>
+    <Button
+      size='sm' // 'md' | 'lg'
+      variant='primary'
+    >
+      Hello Friend
+    </Button>
   );
 }
 ```
 
-### Appearances
+### Appearance
 
-Button component is available in four appearances
+Button component is available in four appearances.
 
 <div
   style={{
@@ -135,23 +127,17 @@ Button component is available in four appearances
   </Button>
 </div>
 
-```js
+```jsx
 import { Button } from '@elegantui/atoms';
 
 export default function App() {
   return (
     <>
-      <Button variant='primary' appearance='solid'>
+      <Button
+        variant='primary'
+        appearance='solid' // 'outline' | 'link' | 'ghost'
+      >
         Solid
-      </Button>
-      <Button variant='primary' appearance='outline'>
-        Outline
-      </Button>
-      <Button variant='primary' appearance='link'>
-        Link
-      </Button>
-      <Button variant='primary' appearance='ghost'>
-        Ghost
       </Button>
     </>
   );
@@ -160,7 +146,7 @@ export default function App() {
 
 ### States
 
-Button component can be configured to have loading and disabled states
+Button component can be configured to have `loading` and `disabled` states by passing props of the same name respectively.
 
 <div
   style={{
@@ -179,7 +165,7 @@ Button component can be configured to have loading and disabled states
   </Button>
 </div>
 
-```js
+```jsx
 import { Button } from '@elegantui/atoms';
 
 export default function App() {
@@ -198,7 +184,7 @@ export default function App() {
 
 ### Custom styles
 
-Button component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop
+Button component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop.
 
 <Button
   style={{ marginTop: '1rem', backgroundColor: 'chocolate', color: 'white' }}
@@ -206,7 +192,7 @@ Button component allows you to configure your own styles. Styles can be provided
   Custom Styles
 </Button>
 
-```js
+```jsx
 import { Button } from '@elegantui/atoms';
 
 export default function App() {

@@ -7,7 +7,7 @@ import Dialog from '../../components/Dialog.tsx';
 
 # Dialog
 
-Displays a dialog with a custom content that requires attention or provides additional information.
+Displays a dialog with custom content that requires attention or provides additional information.
 
 ## Usage
 
@@ -15,11 +15,11 @@ Displays a dialog with a custom content that requires attention or provides addi
 import { Dialog } from '@elegantui/atoms';
 ```
 
-### Default
+## Basic Example
 
 <Dialog />
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
@@ -52,9 +52,9 @@ export default function App() {
 
 ### Open
 
-Dialog component requires an `open` prop that will determine the open and close state of the dialog.
+Dialog component requires an `open` prop that will determine the open or close state of the dialog.
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
@@ -70,9 +70,9 @@ export default function App() {
 
 ### DismissHandler
 
-Dialog component requires a callback function as a `dismissHandler` prop which is fired when the dialog component is dismissed
+Dialog component requires a callback function as a `dismissHandler` prop which is fired when the dialog component is dismissed.
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
@@ -92,7 +92,7 @@ Dialog component accepts an optional `title` prop which sets the title of the di
 
 <Dialog title='My Dialog' />
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
@@ -106,13 +106,13 @@ export default function App() {
 }
 ```
 
-### Disabling Dialog dismissal on Esc
+### Disabling Dialog Dismissal on Esc
 
-The dialog component is fully accessible and clicking outside the dialog component will dismiss. We might want to disable this behavior in certain scenarios. To achieve this you can pass a `disableCloseOnEsc` prop
+The dialog component is fully accessible and clicking outside the dialog component will dismiss it. We might want to disable this behavior in certain scenarios. To achieve this you can pass a `disableCloseOnEsc` prop.
 
 <Dialog title='My Dialog' disableCloseOnEsc />
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
@@ -131,9 +131,9 @@ export default function App() {
 }
 ```
 
-### Disabling Dialog close button
+### Disabling Dialog Close Button
 
-The dialog component can also be dismissed by using the close button in the dialog title. We might want to disable this behavior in certain scenarios. To achieve this you can pass a `disableCloseButton` prop
+The dialog component can also be dismissed by using the close button in the dialog title. We might want to disable this behavior in certain scenarios. To achieve this you can pass a `disableCloseButton` prop.
 
 <Callout emoji='⚠️'>
   Setting **disableCloseButton** to **true** will disable clicking outside the
@@ -142,7 +142,7 @@ The dialog component can also be dismissed by using the close button in the dial
 
 <Dialog title='My Dialog' disableCloseButton />
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
@@ -163,14 +163,14 @@ export default function App() {
 
 ### Sizes
 
-Dialog component is available in four sizes
+Dialog component is available in four sizes.
 
 <Dialog title='Small' size='sm' />
 <Dialog title='Medium' size='md' />
 <Dialog title='Large' size='lg' />
 <Dialog title='Extra Large' size='xl' />
 
-```js
+```jsx
 import { Button, Dialog } from '@elegantui/atoms';
 
 export default function App() {
