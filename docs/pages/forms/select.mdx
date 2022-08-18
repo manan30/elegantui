@@ -7,7 +7,7 @@ import Select from '../../components/Select.tsx';
 
 # Select
 
-Select allows users to select a value from a dropdown list of items.
+Select allows users to select a value from a dropdown list of options.
 
 ## Usage
 
@@ -20,7 +20,7 @@ import { Select } from '@elegantui/forms';
 The `Select` component also includes a `Select.Option` component that allows you to display a list of options.
 
 <Callout emoji='⚠️'>
-  **Select** expects all its children to be a **Select.Option** component
+  **Select** expects all its children to be a **Select.Option** component.
 </Callout>
 
 ## Basic Example
@@ -47,9 +47,7 @@ export default function App() {
       label='Select'
       selectedText={person.name}
       value={person}
-      onChange={(p) => {
-        setPerson(p);
-      }}
+      onChange={(p) => setPerson(p)}
     >
       {people.map((person) => (
         <Select.Option
@@ -68,12 +66,12 @@ export default function App() {
 The value passed to the `selectedText` prop is displayed inside the select input. This value is usually the option selected by the user.
 
 <Callout emoji='⚠️'>
-  **selectedText** must be a **string** for the value to be displayed correctly
+  **selectedText** must be a **string** for the value to be displayed correctly.
 </Callout>
 
 ### Variants
 
-Select component is available in six variants
+Select component is available in six variants.
 
 <Select variant='primary' />
 <Select variant='secondary' />
@@ -101,9 +99,7 @@ export default function App() {
       label='Select'
       selectedText={person.name}
       value={person}
-      onChange={(p) => {
-        setPerson(p);
-      }}
+      onChange={(p) => setPerson(p)}
       variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
     >
       {people.map((person) => (
@@ -143,9 +139,7 @@ export default function App() {
       label='Primary'
       selectedText={person.name}
       value={person}
-      onChange={(p) => {
-        setPerson(p);
-      }}
+      onChange={(p) => setPerson(p)}
       variant='primary'
       hideLabel
     >
@@ -186,9 +180,7 @@ export default function App() {
       label='Primary'
       selectedText={person.name}
       value={person}
-      onChange={(p) => {
-        setPerson(p);
-      }}
+      onChange={(p) => setPerson(p)}
       variant='primary'
       disabled
     >

@@ -1,0 +1,272 @@
+---
+title: Combobox
+---
+
+import Callout from 'nextra-theme-docs/callout';
+import Combobox from '../../components/Combobox.tsx';
+import Select from '../../components/Select.tsx';
+
+# Combobox
+
+Combobox allows users to search and select a value from a dropdown list of options.
+
+## Usage
+
+```jsx
+import { Combobox } from '@elegantui/forms';
+```
+
+## Components
+
+The `Combobox` component also includes a `Combobox.Option` component that allows you to display a list of options.
+
+<Callout emoji='⚠️'>
+  **Combobox** expects all its children to be a **Combobox.Option** component.
+</Callout>
+
+## Basic Example
+
+<Combobox />
+
+```jsx
+import { Combobox } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  const [query, setQuery] = React.useState('');
+
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.name.toLowerCase().includes(query.toLowerCase());
+        });
+
+  return (
+    <Combobox
+      name='combobox'
+      label='Combobox'
+      value={person}
+      onChange={(p) => setPerson(p)}
+      inputDisplayValue={(p) => p?.name ?? ''}
+      inputChangeHandler={(e) => setQuery(e.target.value)}
+    >
+      {filteredPeople.map((person) => (
+        <Combobox.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+        />
+      ))}
+    </Combobox>
+  );
+}
+```
+
+### Filtering values
+
+The `inputChangeHandler` prop provides a callback function with the change event as the arguemt and can be used to filter the list by accessing the `value` property of `event.target`.
+
+<Callout emoji='☝️'>
+  See the basic example above on how this is implemented.
+</Callout>
+
+### Displaying selected value
+
+The `inputDisplayValue` prop provides a callback function with the selected option as the argument and returns a string. The value returned from this callback function will be used as the display value.
+
+<Callout emoji='⚠️'>
+  The value returned from **inputDisplayValue** callback function must be a
+  **string** for the value to be displayed correctly
+</Callout>
+
+### Variants
+
+Combobox component is available in six variants
+
+<Combobox variant='primary' />
+<Combobox variant='secondary' />
+<Combobox variant='error' />
+<Combobox variant='warning' />
+<Combobox variant='success' />
+<Combobox variant='default' />
+
+```jsx
+import { Combobox } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  const [query, setQuery] = React.useState('');
+
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.name.toLowerCase().includes(query.toLowerCase());
+        });
+
+  return (
+    <Combobox
+      name='combobox'
+      label='Combobox'
+      value={person}
+      onChange={(p) => setPerson(p)}
+      inputDisplayValue={(p) => p?.name ?? ''}
+      inputChangeHandler={(e) => setQuery(e.target.value)}
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    >
+      {filteredPeople.map((person) => (
+        <Combobox.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+        />
+      ))}
+    </Combobox>
+  );
+}
+```
+
+### Label
+
+Combobox component renders a `label` for accessibility purposes. The value for the label can be provided using the `label` prop. If you would like to hide the label but still keep it accessible to screen readers you can pass a `hideLabel` prop.
+
+<Combobox variant='primary' label='Primary' hideLabel />
+
+```jsx
+import { Combobox } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  const [query, setQuery] = React.useState('');
+
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.name.toLowerCase().includes(query.toLowerCase());
+        });
+
+  return (
+    <Combobox
+      name='combobox'
+      label='Combobox'
+      value={person}
+      onChange={(p) => setPerson(p)}
+      inputDisplayValue={(p) => p?.name ?? ''}
+      inputChangeHandler={(e) => setQuery(e.target.value)}
+      hideLabel
+    >
+      {filteredPeople.map((person) => (
+        <Combobox.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+        />
+      ))}
+    </Combobox>
+  );
+}
+```
+
+### Disabled state
+
+Combobox component can be disabled by using the `disabled` prop. This will disable the entire component. For disabling only certain options the `disabled` prop needs be passed to each `Combobox.Option` component individually.
+
+<Combobox variant='primary' disabled />
+
+```jsx
+import { Combobox } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  const [query, setQuery] = React.useState('');
+
+  const filteredPeople =
+    query === ''
+      ? people
+      : people.filter((person) => {
+          return person.name.toLowerCase().includes(query.toLowerCase());
+        });
+
+  return (
+    <Combobox
+      name='combobox'
+      label='Combobox'
+      value={person}
+      onChange={(p) => setPerson(p)}
+      inputDisplayValue={(p) => p?.name ?? ''}
+      inputChangeHandler={(e) => setQuery(e.target.value)}
+      disabled
+    >
+      {filteredPeople.map((person) => (
+        <Combobox.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+          disabled={person.unavailable} // use this to disable only certain options
+        />
+      ))}
+    </Combobox>
+  );
+}
+```
+
+#### Available Props
+
+`Combobox`
+
+| **Prop**               | **Values**                                                                                      | **Default** |
+| ---------------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **name**               | `string`                                                                                        | --          |
+| **value**              | `<SelectValue = unknown>`                                                                       | --          |
+| **inputDisplayValue**  | `(value: <SelectValue = unknown>) => string`                                                    | --          |
+| **onChange**           | `(value: <SelectValue = unknown>) => void`                                                      | --          |
+| **inputChangeHandler** | `(e: React.ChangeEvent<HTMLInputElement>) => void`                                              | --          |
+| **disabled**           | <code>true &#124; false </code>                                                                 | `false`     |
+| **label**              | `string`                                                                                        | --          |
+| **hideLabel**          | <code>true &#124; false </code>                                                                 | `false`     |
+| **children**           | <code>Combobox.Option &#124; Combobox.Option[] </code>                                          | --          |
+| **variant**            | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `primary`   |
+| **className**          | `string`                                                                                        | --          |
+
+`Combobox.Option`
+
+| **Prop**       | **Values**                      | **Default** |
+| -------------- | ------------------------------- | ----------- |
+| **value**      | `<SelectValue = unknown>`       | --          |
+| **optionText** | `string`                        | --          |
+| **disabled**   | <code>true &#124; false </code> | `false`     |
+| **className**  | `string`                        | --          |
