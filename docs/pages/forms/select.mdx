@@ -1,0 +1,83 @@
+---
+title: Select
+---
+
+import Callout from 'nextra-theme-docs/callout';
+import { Checkbox } from '@elegantui/forms';
+import Select from '../../components/Select.tsx';
+
+# Select
+
+Select allows users to select a value from a dropdown list of items.
+
+## Usage
+
+```jsx
+import { Select } from '@elegantui/forms';
+```
+
+## Components
+
+The **Select** component is split into 2 children components:
+
+- `Select` is the parent component.
+- `Select.Option` is the list component that allows you to display a list of options
+
+### Example
+
+<Select />
+
+```js
+import { Select } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  return (
+    <Select
+      name='Default'
+      label='Select'
+      selectedText={person.name}
+      value={person}
+      onChange={(p) => {
+        setPerson(p);
+      }}
+    >
+      {people.map((person) => (
+        <Select.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+          disabled={person.unavailable}
+        />
+      ))}
+    </Select>
+  );
+}
+```
+
+### Displaying selected value
+
+The value passed to the `selectedText` prop displays the option selected by the user.
+
+<Callout emoji='⚠️'>
+  **selectedText** must be a **string** for the value to be displayed correctly
+</Callout>
+
+### Variants
+
+Select component is available in six variants
+
+<Select variant='primary' />
+<Select variant='secondary' />
+<Select variant='error' />
+<Select variant='warning' />
+<Select variant='success' />
+<Select variant='default' />

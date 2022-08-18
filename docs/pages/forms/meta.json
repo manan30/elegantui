@@ -1,5 +1,6 @@
 {
   "checkbox": "Checkbox",
   "input": "Input",
-  "radio-button": "Radio Button"
+  "radio-button": "Radio Button",
+  "select": "Select"
 }
