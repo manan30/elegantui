@@ -14,7 +14,7 @@ Checkboxes allow users to select multiple items from a list of individual items,
 import { Checkbox } from '@elegantui/forms';
 ```
 
-### Default
+## Basic Example
 
 <div style={{ marginTop: '1rem', width: '15rem' }}>
   <Checkbox name='default' checkboxText='Checkbox' value='checkbox' />
@@ -30,7 +30,7 @@ export default function App() {
 
 ### Variants
 
-Checkbox component is available in six variants
+Checkbox component is available in six variants.
 
 <div
   style={{
@@ -79,44 +79,12 @@ import { Checkbox } from '@elegantui/forms';
 
 export default function App() {
   return (
-    <>
-      <Checkbox
-        name='primary'
-        value='primary'
-        checkboxText='Primary'
-        variant='primary'
-      />
-      <Checkbox
-        name='secondary'
-        value='secondary'
-        checkboxText='Secondary'
-        variant='secondary'
-      />
-      <Checkbox
-        name='error'
-        value='error'
-        checkboxText='Error'
-        variant='error'
-      />
-      <Checkbox
-        name='success'
-        value='success'
-        checkboxText='Success'
-        variant='success'
-      />
-      <Checkbox
-        name='warning'
-        value='warning'
-        checkboxText='Warning'
-        variant='warning'
-      />
-      <Checkbox
-        name='default'
-        value='default'
-        checkboxText='Default'
-        variant='default'
-      />
-    </>
+    <Checkbox
+      name='checkbox'
+      value='checkbox'
+      checkboxText='Checkbox'
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    />
   );
 }
 ```
@@ -159,7 +127,7 @@ export default function App() {
 
 ### Disabled state
 
-Checkbox component can be configured to have a disabled state by using the `disabled` prop
+Checkbox component can be configured to have a disabled state by using the `disabled` prop.
 
 <div
   style={{

@@ -4,7 +4,6 @@ title: Combobox
 
 import Callout from 'nextra-theme-docs/callout';
 import Combobox from '../../components/Combobox.tsx';
-import Select from '../../components/Select.tsx';
 
 # Combobox
 
@@ -251,9 +250,9 @@ export default function App() {
 | **Prop**               | **Values**                                                                                      | **Default** |
 | ---------------------- | ----------------------------------------------------------------------------------------------- | ----------- |
 | **name**               | `string`                                                                                        | --          |
-| **value**              | `<SelectValue = unknown>`                                                                       | --          |
-| **inputDisplayValue**  | `(value: <SelectValue = unknown>) => string`                                                    | --          |
-| **onChange**           | `(value: <SelectValue = unknown>) => void`                                                      | --          |
+| **value**              | `<ComboboxValue = unknown>`                                                                     | --          |
+| **inputDisplayValue**  | `(value: <ComboboxValue = unknown>) => string`                                                  | --          |
+| **onChange**           | `(value: <ComboboxValue = unknown>) => void`                                                    | --          |
 | **inputChangeHandler** | `(e: React.ChangeEvent<HTMLInputElement>) => void`                                              | --          |
 | **disabled**           | <code>true &#124; false </code>                                                                 | `false`     |
 | **label**              | `string`                                                                                        | --          |
@@ -266,7 +265,7 @@ export default function App() {
 
 | **Prop**       | **Values**                      | **Default** |
 | -------------- | ------------------------------- | ----------- |
-| **value**      | `<SelectValue = unknown>`       | --          |
+| **value**      | `<ComboboxValue = unknown>`     | --          |
 | **optionText** | `string`                        | --          |
 | **disabled**   | <code>true &#124; false </code> | `false`     |
 | **className**  | `string`                        | --          |

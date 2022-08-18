@@ -14,7 +14,7 @@ Radio buttons allow users to select a single option from a list options. All pos
 import { RadioButton } from '@elegantui/forms';
 ```
 
-### Default
+## Basic Example
 
 <div style={{ marginTop: '1rem', width: '15rem' }}>
   <RadioButton name='default' radioButtonText='Radio' value='radio' />
@@ -32,7 +32,7 @@ export default function App() {
 
 ### Variants
 
-RadioButton component is available in six variants
+RadioButton component is available in six variants.
 
 <div
   style={{
@@ -86,44 +86,12 @@ import { RadioButton } from '@elegantui/forms';
 
 export default function App() {
   return (
-    <>
-      <RadioButton
-        name='primary'
-        value='primary'
-        radioButtonText='Primary'
-        variant='primary'
-      />
-      <RadioButton
-        name='secondary'
-        value='secondary'
-        radioButtonText='Secondary'
-        variant='secondary'
-      />
-      <RadioButton
-        name='error'
-        value='error'
-        radioButtonText='Error'
-        variant='error'
-      />
-      <RadioButton
-        name='success'
-        value='success'
-        radioButtonText='Success'
-        variant='success'
-      />
-      <RadioButton
-        name='warning'
-        value='warning'
-        radioButtonText='Warning'
-        variant='warning'
-      />
-      <RadioButton
-        name='default'
-        value='default'
-        radioButtonText='Default'
-        variant='default'
-      />
-    </>
+    <RadioButton
+      name='primary'
+      value='primary'
+      radioButtonText='Primary'
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    />
   );
 }
 ```
@@ -166,7 +134,7 @@ export default function App() {
 
 ### Disabled state
 
-RadioButton component can be configured to have a disabled state by using the `disabled` prop
+RadioButton component can be configured to have a disabled state by using the `disabled` prop.
 
 <div
   style={{

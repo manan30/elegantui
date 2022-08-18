@@ -14,7 +14,7 @@ Input component is used to get the user input in a text field.
 import { Input } from '@elegantui/forms';
 ```
 
-### Example
+## Basic Example
 
 <div style={{ marginTop: '1rem', width: '15rem' }}>
   <Input name='default' label='Input' placeholder='Enter text' />
@@ -30,7 +30,7 @@ export default function App() {
 
 ### Variants
 
-Input component is available in six variants
+Input component is available in six variants.
 
 <div
   style={{
@@ -84,51 +84,19 @@ import { Input } from '@elegantui/forms';
 
 export default function App() {
   return (
-    <>
-      <Input
-        name='primary'
-        label='Primary'
-        placeholder='primary variant'
-        variant='primary'
-      />
-      <Input
-        name='secondary'
-        label='Secondary'
-        placeholder='secondary variant'
-        variant='secondary'
-      />
-      <Input
-        name='error'
-        label='Error'
-        placeholder='error variant'
-        variant='error'
-      />
-      <Input
-        name='success'
-        label='Success'
-        placeholder='success variant'
-        variant='success'
-      />
-      <Input
-        name='warning'
-        label='Warning'
-        placeholder='warning variant'
-        variant='warning'
-      />
-      <Input
-        name='default'
-        label='Default'
-        placeholder='default variant'
-        variant='default'
-      />
-    </>
+    <Input
+      name='primary'
+      label='Primary'
+      placeholder='primary variant'
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    />
   );
 }
 ```
 
-### Hide Label
+### Label
 
-Input component renders a `label` for accessibility. If you would like to hide the label but still keep it accessible to screen readers you can pass a `hideLabel` prop
+Input component renders a `label` for accessibility purposes. The value for the label can be provided using the `label` prop. If you would like to hide the label but still keep it accessible to screen readers you can pass a `hideLabel` prop.
 
 <div
   style={{
@@ -166,7 +134,7 @@ export default function App() {
 
 ### Disabled state
 
-Input component can be configured to have a disabled state by using the `disabled` prop
+Input component can be configured to have a disabled state by using the `disabled` prop.
 
 <div
   style={{
@@ -204,7 +172,7 @@ export default function App() {
 
 ### Custom styles
 
-Input component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop
+Input component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop.
 
 <div
   style={{
