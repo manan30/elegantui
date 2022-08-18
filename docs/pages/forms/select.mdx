@@ -3,7 +3,6 @@ title: Select
 ---
 
 import Callout from 'nextra-theme-docs/callout';
-import { Checkbox } from '@elegantui/forms';
 import Select from '../../components/Select.tsx';
 
 # Select
@@ -18,12 +17,13 @@ import { Select } from '@elegantui/forms';
 
 ## Components
 
-The **Select** component is split into 2 children components:
+The `Select` component also includes a `Select.Option` component that allows you to display a list of options.
 
-- `Select` is the parent component.
-- `Select.Option` is the list component that allows you to display a list of options
+<Callout emoji='⚠️'>
+  **Select** expects all its children to be a **Select.Option** component
+</Callout>
 
-### Example
+## Basic Example
 
 <Select />
 
@@ -50,14 +50,12 @@ export default function App() {
       onChange={(p) => {
         setPerson(p);
       }}
-      variant={variant}
     >
       {people.map((person) => (
         <Select.Option
           key={person.id}
           optionText={person.name}
           value={person}
-          disabled={person.unavailable}
         />
       ))}
     </Select>
@@ -67,7 +65,7 @@ export default function App() {
 
 ### Displaying selected value
 
-The value passed to the `selectedText` prop displays the option selected by the user.
+The value passed to the `selectedText` prop is displayed inside the select input. This value is usually the option selected by the user.
 
 <Callout emoji='⚠️'>
   **selectedText** must be a **string** for the value to be displayed correctly
@@ -84,7 +82,7 @@ Select component is available in six variants
 <Select variant='success' />
 <Select variant='default' />
 
-```jsx highlight=4,6-8
+```jsx
 import { Select } from '@elegantui/forms';
 
 export default function App() {
@@ -113,7 +111,6 @@ export default function App() {
           key={person.id}
           optionText={person.name}
           value={person}
-          disabled={person.unavailable}
         />
       ))}
     </Select>
@@ -121,13 +118,13 @@ export default function App() {
 }
 ```
 
-### Hide Label
+### Label
 
-Select component renders a `label` for accessibility. If you would like to hide the label but still keep it accessible to screen readers you can pass a `hideLabel` prop
+Select component renders a `label` for accessibility purposes. The value for the label can be provided using the `label` prop. If you would like to hide the label but still keep it accessible to screen readers you can pass a `hideLabel` prop.
 
-<Select variant='primary' hideLabel />
+<Select variant='primary' label='Primary' hideLabel />
 
-```js
+```jsx
 import { Select } from '@elegantui/forms';
 
 export default function App() {
@@ -142,8 +139,8 @@ export default function App() {
   const [person, setPerson] = React.useState(people[0]);
   return (
     <Select
-      name='Default'
-      label='Select'
+      name='primary'
+      label='Primary'
       selectedText={person.name}
       value={person}
       onChange={(p) => {
@@ -157,7 +154,6 @@ export default function App() {
           key={person.id}
           optionText={person.name}
           value={person}
-          disabled={person.unavailable}
         />
       ))}
     </Select>
@@ -167,7 +163,7 @@ export default function App() {
 
 ### Disabled state
 
-Select component can be configured to have a disabled state by using the `disabled` prop
+Select component can be disabled by using the `disabled` prop. This will disable the entire component. For disabling only certain options the `disabled` prop needs be passed to each `Select.Option` component individually.
 
 <Select variant='primary' disabled />
 
@@ -186,8 +182,8 @@ export default function App() {
   const [person, setPerson] = React.useState(people[0]);
   return (
     <Select
-      name='Default'
-      label='Select'
+      name='primary'
+      label='Primary'
       selectedText={person.name}
       value={person}
       onChange={(p) => {
@@ -201,10 +197,36 @@ export default function App() {
           key={person.id}
           optionText={person.name}
           value={person}
-          disabled={person.unavailable}
+          disabled={person.unavailable} // use this to disable only certain options
         />
       ))}
     </Select>
   );
 }
 ```
+
+#### Available Props
+
+`Select`
+
+| **Prop**         | **Values**                                                                                      | **Default** |
+| ---------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **name**         | `string`                                                                                        | --          |
+| **selectedText** | `string`                                                                                        | --          |
+| **value**        | `<SelectValue = unknown>`                                                                       | --          |
+| **onChange**     | `(value: <SelectValue = unknown>) => void`                                                      | --          |
+| **disabled**     | <code>true &#124; false </code>                                                                 | `false`     |
+| **label**        | `string`                                                                                        | --          |
+| **hideLabel**    | <code>true &#124; false </code>                                                                 | `false`     |
+| **children**     | <code>Select.Option &#124; Select.Option[] </code>                                              | --          |
+| **variant**      | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `primary`   |
+| **className**    | `string`                                                                                        | --          |
+
+`Select.Option`
+
+| **Prop**       | **Values**                      | **Default** |
+| -------------- | ------------------------------- | ----------- |
+| **value**      | `<SelectValue = unknown>`       | --          |
+| **optionText** | `string`                        | --          |
+| **disabled**   | <code>true &#124; false </code> | `false`     |
+| **className**  | `string`                        | --          |
