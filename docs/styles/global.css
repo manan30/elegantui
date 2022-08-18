@@ -2,6 +2,11 @@
   z-index: 100;
 }
 
+[role='listbox'] {
+  z-index: 100;
+  margin-left: 0;
+}
+
 [aria-haspopup='true'] {
   background-color: #f9fafb;
 }

@@ -27,7 +27,7 @@ The **Select** component is split into 2 children components:
 
 <Select />
 
-```js
+```jsx
 import { Select } from '@elegantui/forms';
 
 export default function App() {
@@ -40,15 +40,17 @@ export default function App() {
   ];
 
   const [person, setPerson] = React.useState(people[0]);
+
   return (
     <Select
-      name='Default'
+      name='default'
       label='Select'
       selectedText={person.name}
       value={person}
       onChange={(p) => {
         setPerson(p);
       }}
+      variant={variant}
     >
       {people.map((person) => (
         <Select.Option
@@ -81,3 +83,128 @@ Select component is available in six variants
 <Select variant='warning' />
 <Select variant='success' />
 <Select variant='default' />
+
+```jsx highlight=4,6-8
+import { Select } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  return (
+    <Select
+      name='Default'
+      label='Select'
+      selectedText={person.name}
+      value={person}
+      onChange={(p) => {
+        setPerson(p);
+      }}
+      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+    >
+      {people.map((person) => (
+        <Select.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+          disabled={person.unavailable}
+        />
+      ))}
+    </Select>
+  );
+}
+```
+
+### Hide Label
+
+Select component renders a `label` for accessibility. If you would like to hide the label but still keep it accessible to screen readers you can pass a `hideLabel` prop
+
+<Select variant='primary' hideLabel />
+
+```js
+import { Select } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  return (
+    <Select
+      name='Default'
+      label='Select'
+      selectedText={person.name}
+      value={person}
+      onChange={(p) => {
+        setPerson(p);
+      }}
+      variant='primary'
+      hideLabel
+    >
+      {people.map((person) => (
+        <Select.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+          disabled={person.unavailable}
+        />
+      ))}
+    </Select>
+  );
+}
+```
+
+### Disabled state
+
+Select component can be configured to have a disabled state by using the `disabled` prop
+
+<Select variant='primary' disabled />
+
+```js
+import { Select } from '@elegantui/forms';
+
+export default function App() {
+  const people = [
+    { id: 1, name: 'Durward Reynolds', unavailable: false },
+    { id: 2, name: 'Kenton Towne', unavailable: false },
+    { id: 3, name: 'Therese Wunsch', unavailable: false },
+    { id: 4, name: 'Benedict Kessler', unavailable: true },
+    { id: 5, name: 'Katelyn Rohan', unavailable: false }
+  ];
+
+  const [person, setPerson] = React.useState(people[0]);
+  return (
+    <Select
+      name='Default'
+      label='Select'
+      selectedText={person.name}
+      value={person}
+      onChange={(p) => {
+        setPerson(p);
+      }}
+      variant='primary'
+      disabled
+    >
+      {people.map((person) => (
+        <Select.Option
+          key={person.id}
+          optionText={person.name}
+          value={person}
+          disabled={person.unavailable}
+        />
+      ))}
+    </Select>
+  );
+}
+```

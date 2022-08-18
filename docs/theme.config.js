@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 export default {
   projectLink: 'https://github.com/manan30/elegantui',
+  github: 'https://github.com/manan30/elegantui',
   titleSuffix: ' – ElegantUI',
   nextLinks: true,
   prevLinks: true,
@@ -82,5 +83,6 @@ export default {
       />
       <meta name='apple-mobile-web-app-title' content='ElegantUI' />
     </>
-  )
+  ),
+  floatTOC: true
 };
