@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Variant } from '@vitebook/preact';
 import {
   ControlsAddon,
   eventCallback,
