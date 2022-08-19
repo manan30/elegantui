@@ -7,7 +7,6 @@ export type CheckboxProps = {
   name: string;
   checkboxText: string;
   value: string;
-  onChange?: InputHTMLAttributes<HTMLInputElement>['onChange'];
   disabled?: boolean;
   variant?:
     | 'default'
@@ -17,7 +16,7 @@ export type CheckboxProps = {
     | 'warning'
     | 'error';
   className?: string;
-};
+} & InputHTMLAttributes<HTMLInputElement>;
 
 function Checkbox({
   name,
@@ -26,7 +25,8 @@ function Checkbox({
   disabled,
   variant = 'primary',
   value,
-  className: classes
+  className: classes,
+  ...remProps
 }: CheckboxProps) {
   const checkboxVariant = React.useMemo(() => {
     switch (variant) {
@@ -60,6 +60,7 @@ function Checkbox({
         type='checkbox'
         onChange={onChange}
         disabled={disabled}
+        {...remProps}
       />
       <span className={tm('ml-2 text-sm', disabled && 'opacity-50')}>
         {checkboxText}
