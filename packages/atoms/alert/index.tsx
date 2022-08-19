@@ -2,7 +2,7 @@ import * as React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
 import Button from '../button';
 
-import type { ReactNode, MouseEvent } from 'react';
+import type { ReactNode, MouseEvent, CSSProperties } from 'react';
 
 export type AlertProps = {
   children: ReactNode;
@@ -18,6 +18,7 @@ export type AlertProps = {
     | 'warning'
     | 'error';
   className?: string;
+  style?: CSSProperties;
 };
 
 function Alert({
@@ -27,7 +28,8 @@ function Alert({
   customIcon,
   dismissible,
   dismissHandler,
-  className: classes
+  className: classes,
+  style
 }: AlertProps) {
   const alertVariant = React.useMemo(() => {
     switch (variant) {
@@ -154,6 +156,7 @@ function Alert({
         alertVariant,
         classes
       )}
+      style={style}
     >
       {customIcon ?? alertAppearance.icon}
       <span className='flex-1'>{children}</span>

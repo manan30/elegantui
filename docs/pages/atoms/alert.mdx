@@ -189,6 +189,19 @@ export default function App() {
 }
 ```
 
+### Custom styles
+
+Alert component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop.
+
+<Alert
+  style={{ marginTop: '1rem', backgroundColor: 'chocolate', color: 'white' }}
+  appearance='success'
+  dismissible
+  dismissHandler={() => {}}
+>
+  Custom Styles
+</Alert>
+
 #### Available Props
 
 ---
@@ -202,3 +215,4 @@ export default function App() {
 | **dismissHandler** | `() => void`                                                                                    | --          |
 | **customIcon**     | `React.ReactNode`                                                                               | --          |
 | **className**      | `string`                                                                                        | --          |
+| **style**          | `React.CSSProperties`                                                                           | --          |
