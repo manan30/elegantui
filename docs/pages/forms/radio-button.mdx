@@ -132,6 +132,36 @@ export default function App() {
 }
 ```
 
+### Selected state
+
+RadioButton component can be configured to have a default selected state by using the `checked` prop.
+
+<div style={{ marginTop: '1rem' }}>
+  <RadioButton
+    name='primary'
+    value='primary'
+    radioButtonText='Primary'
+    variant='primary'
+    checked
+  />
+</div>
+
+```js
+import { RadioButton } from '@elegantui/forms';
+
+export default function App() {
+  return (
+    <RadioButton
+      name='primary'
+      value='primary'
+      radioButtonText='Primary'
+      variant='primary'
+      checked
+    />
+  );
+}
+```
+
 ### Disabled state
 
 RadioButton component can be configured to have a disabled state by using the `disabled` prop.
@@ -170,6 +200,20 @@ export default function App() {
 }
 ```
 
+### Custom styles
+
+RadioButton component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop.
+
+<div style={{ marginTop: '1rem' }}>
+  <RadioButton
+    name='primary'
+    value='primary'
+    radioButtonText='Custom Styles'
+    variant='primary'
+    style={{ backgroundColor: 'chocolate', color: 'gray' }}
+  />
+</div>
+
 #### Available Props
 
 ---
@@ -180,6 +224,8 @@ export default function App() {
 | **radioButtonText** | `string`                                                                                        | --          |
 | **value**           | `string`                                                                                        | --          |
 | **onChange**        | `() => void`                                                                                    | --          |
+| **checked**         | <code>true &#124; false</code>                                                                  | `false`     |
 | **variant**         | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `primary`   |
 | **disabled**        | <code>true &#124; false</code>                                                                  | `false`     |
 | **className**       | `string`                                                                                        | --          |
+| **...rest**         | `React.InputHTMLAttributes<HTMLInputElement>`                                                   | --          |

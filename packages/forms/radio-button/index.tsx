@@ -7,7 +7,6 @@ export type RadioButtonProps = {
   name: string;
   radioButtonText: string;
   value: string;
-  onChange?: InputHTMLAttributes<HTMLInputElement>['onChange'];
   disabled?: boolean;
   variant?:
     | 'default'
@@ -17,7 +16,7 @@ export type RadioButtonProps = {
     | 'warning'
     | 'error';
   className?: string;
-};
+} & InputHTMLAttributes<HTMLInputElement>;
 
 function RadioButton({
   name,
@@ -26,7 +25,8 @@ function RadioButton({
   disabled,
   variant = 'primary',
   value,
-  className: classes
+  className: classes,
+  ...remProps
 }: RadioButtonProps) {
   const radioButtonVariant = React.useMemo(() => {
     switch (variant) {
@@ -60,6 +60,7 @@ function RadioButton({
         type='radio'
         onChange={onChange}
         disabled={disabled}
+        {...remProps}
       />
       <span className={tm('ml-2 text-sm', disabled && 'opacity-50')}>
         {radioButtonText}
