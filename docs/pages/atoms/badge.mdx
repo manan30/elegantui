@@ -94,6 +94,22 @@ export default function App() {
 }
 ```
 
+### Custom styles
+
+Badge component allows you to configure your own styles. Styles can be provided either through the React `style` prop or CSS classes using `className` prop.
+
+<Badge
+  style={{
+    marginTop: '1rem',
+    backgroundColor: 'chocolate',
+    color: 'white',
+    width: '8rem'
+  }}
+  size='md'
+  variant='primary'
+  text='Custom Styles'
+/>
+
 #### Available Props
 
 ---
@@ -104,3 +120,4 @@ export default function App() {
 | **size**       | <code>sm &#124; md &#124; lg </code>                                                            | `md`        |
 | **text**       | `string`                                                                                        | --          |
 | **className**  | `string`                                                                                        | --          |
+| **style**      | `React.CSSProperties`                                                                           | --          |

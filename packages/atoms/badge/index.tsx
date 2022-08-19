@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
 
+import type { CSSProperties } from 'react';
+
 export type BadgeProps = {
   text: string;
   appearance?:
@@ -12,13 +14,15 @@ export type BadgeProps = {
     | 'error';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  style?: CSSProperties;
 };
 
 function Badge({
   text,
   appearance = 'default',
   size = 'sm',
-  className
+  className,
+  style
 }: BadgeProps) {
   const badgeAppearance = React.useMemo(() => {
     switch (appearance) {
@@ -55,6 +59,7 @@ function Badge({
         `${badgeSize} `,
         className
       )}
+      style={style}
     >
       {text}
     </span>
