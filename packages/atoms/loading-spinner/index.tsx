@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { twMerge as tm } from 'tailwind-merge';
 
+import type { CSSProperties } from 'react';
+
 export type LoadingSpinnerProps = {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -11,12 +13,14 @@ export type LoadingSpinnerProps = {
     | 'success'
     | 'warning'
     | 'error';
+  style?: CSSProperties;
 };
 
 function LoadingSpinner({
   className,
   size = 'sm',
-  variant = 'default'
+  variant = 'default',
+  style
 }: LoadingSpinnerProps) {
   const loadingSpinnerSize = React.useMemo(() => {
     switch (size) {
@@ -55,6 +59,7 @@ function LoadingSpinner({
       xmlns='http://www.w3.org/2000/svg'
       fill='none'
       viewBox='0 0 24 24'
+      style={style}
     >
       <circle
         className='opacity-25'
