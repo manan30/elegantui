@@ -6,7 +6,7 @@ import type { CSSProperties } from 'react';
 export type LoadingSpinnerProps = {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?:
+  appearance?:
     | 'default'
     | 'primary'
     | 'secondary'
@@ -19,7 +19,7 @@ export type LoadingSpinnerProps = {
 function LoadingSpinner({
   className,
   size = 'sm',
-  variant = 'default',
+  appearance = 'default',
   style
 }: LoadingSpinnerProps) {
   const loadingSpinnerSize = React.useMemo(() => {
@@ -35,25 +35,25 @@ function LoadingSpinner({
     }
   }, [size]);
 
-  const loadingSpinnerVariant = React.useMemo(() => {
-    switch (variant) {
+  const loadingSpinnerAppearance = React.useMemo(() => {
+    switch (appearance) {
       case 'primary':
       case 'secondary':
       case 'error':
       case 'warning':
       case 'success':
-        return `text-${variant}`;
+        return `text-${appearance}`;
       default:
         return 'text-gray-300';
     }
-  }, [variant]);
+  }, [appearance]);
 
   return (
     <svg
       className={tm(
         'animate-spin',
         loadingSpinnerSize,
-        loadingSpinnerVariant,
+        loadingSpinnerAppearance,
         className
       )}
       xmlns='http://www.w3.org/2000/svg'

@@ -11,12 +11,12 @@ export const __pageMeta: PageMeta = {
 
 function LoadingSpinnerStory() {
   const [size, setSize] = useState<LoadingSpinnerProps['size']>('md');
-  const [variant, setVariant] =
-    useState<LoadingSpinnerProps['variant']>('default');
+  const [appearance, setAppearance] =
+    useState<LoadingSpinnerProps['appearance']>('default');
 
   return (
     <>
-      <LoadingSpinner size={size} variant={variant} />
+      <LoadingSpinner size={size} appearance={appearance} />
 
       <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -37,11 +37,13 @@ function LoadingSpinnerStory() {
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
         >
-          <label>Variant</label>
+          <label>Appearance</label>
           <select
-            value={variant}
+            value={appearance}
             onChange={(e) => {
-              setVariant(e.target.value as LoadingSpinnerProps['variant']);
+              setAppearance(
+                e.target.value as LoadingSpinnerProps['appearance']
+              );
             }}
           >
             {[

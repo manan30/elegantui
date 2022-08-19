@@ -28,9 +28,9 @@ export default function App() {
 }
 ```
 
-### Variants
+### Appearances
 
-LoadingSpinner component is available in six variants.
+LoadingSpinner component is available in six appearances.
 
 <div
   style={{
@@ -41,11 +41,11 @@ LoadingSpinner component is available in six variants.
     overflowX: 'auto'
   }}
 >
-  <LoadingSpinner variant='primary' />
-  <LoadingSpinner variant='secondary' />
-  <LoadingSpinner variant='error' />
-  <LoadingSpinner variant='warning' />
-  <LoadingSpinner variant='success' />
+  <LoadingSpinner appearance='primary' />
+  <LoadingSpinner appearance='secondary' />
+  <LoadingSpinner appearance='error' />
+  <LoadingSpinner appearance='warning' />
+  <LoadingSpinner appearance='success' />
   <LoadingSpinner />
 </div>
 
@@ -55,7 +55,7 @@ import { LoadingSpinner } from '@elegantui/atoms';
 export default function App() {
   return (
     <LoadingSpinner
-      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+      appearance='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
     />
   );
 }
@@ -74,10 +74,10 @@ LoadingSpinner component is available in four sizes.
     overflowX: 'auto'
   }}
 >
-  <LoadingSpinner size='sm' variant='primary' />
-  <LoadingSpinner size='md' variant='primary' />
-  <LoadingSpinner size='lg' variant='primary' />
-  <LoadingSpinner size='xl' variant='primary' />
+  <LoadingSpinner size='sm' appearance='primary' />
+  <LoadingSpinner size='md' appearance='primary' />
+  <LoadingSpinner size='lg' appearance='primary' />
+  <LoadingSpinner size='xl' appearance='primary' />
 </div>
 
 ```js
@@ -87,7 +87,7 @@ export default function App() {
   return (
     <LoadingSpinner
       size='sm' // 'md' | 'lg' | 'xl'
-      variant='primary'
+      appearance='primary'
     />
   );
 }
@@ -99,7 +99,7 @@ LoadingSpinner component allows you to configure your own styles. Styles can be 
 
 <LoadingSpinner
   size='sm'
-  variant='primary'
+  appearance='primary'
   style={{ marginTop: '1rem', color: 'chocolate' }}
 />
 
@@ -107,9 +107,9 @@ LoadingSpinner component allows you to configure your own styles. Styles can be 
 
 ---
 
-| **Prop**      | **Values**                                                                                      | **Default** |
-| ------------- | ----------------------------------------------------------------------------------------------- | ----------- |
-| **variant**   | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
-| **size**      | <code>sm &#124; md &#124; lg &#124; xl </code>                                                  | `sm`        |
-| **style**     | `React.CSSProperties`                                                                           | --          |
-| **className** | `string`                                                                                        | --          |
+| **Prop**       | **Values**                                                                                      | **Default** |
+| -------------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| **appearance** | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
+| **size**       | <code>sm &#124; md &#124; lg &#124; xl </code>                                                  | `sm`        |
+| **style**      | `React.CSSProperties`                                                                           | --          |
+| **className**  | `string`                                                                                        | --          |
