@@ -15,43 +15,54 @@ export const __pageMeta: PageMeta = {
 };
 
 function ButtonStory() {
-  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
   const [size, setSize] = useState<ButtonProps['size']>('md');
+  const [variant, setVariant] = useState<ButtonProps['variant']>('solid');
   const [appearance, setAppearance] =
-    useState<ButtonProps['appearance']>('solid');
+    useState<ButtonProps['appearance']>('default');
   const [disabled, setDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
 
   return (
     <>
-      {['Default', 'Primary', 'Secondary', 'Success', 'Warning', 'Error'].map(
-        (variant) => {
-          return (
-            <Variant name={variant} key={variant}>
-              <Button
-                onClick={eventCallback}
-                size={size}
-                disabled={disabled}
-                variant={variant.toLowerCase() as ButtonProps['variant']}
-                appearance={appearance}
-                loading={loading}
-              >
-                {title.length ? title : variant}
-              </Button>
-            </Variant>
-          );
-        }
-      )}
+      <Button
+        onClick={eventCallback}
+        size={size}
+        disabled={disabled}
+        appearance={appearance}
+        variant={variant}
+        loading={loading}
+        style={{ textTransform: 'capitalize' }}
+      >
+        {text.length ? text : variant}
+      </Button>
 
       <ControlsAddon>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <label>Title</label>
           <input
             type='text'
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             style={{ marginLeft: '0.5rem' }}
           />
+        </div>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
+        >
+          <label>Variant</label>
+          <select
+            style={{ marginLeft: '0.5rem' }}
+            value={variant}
+            onChange={(e) => {
+              setVariant(e.target.value as ButtonProps['variant']);
+            }}
+          >
+            <option value='solid'>Solid</option>
+            <option value='outline'>Outline</option>
+            <option value='link'>Link</option>
+            <option value='ghost'>Ghost</option>
+          </select>
         </div>
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
@@ -61,13 +72,23 @@ function ButtonStory() {
             style={{ marginLeft: '0.5rem' }}
             value={appearance}
             onChange={(e) => {
-              setAppearance(e.target.value as ButtonProps['appearance']);
+              setAppearance(
+                e.target.value.toLowerCase() as ButtonProps['appearance']
+              );
             }}
           >
-            <option value='solid'>Solid</option>
-            <option value='outline'>Outline</option>
-            <option value='link'>Link</option>
-            <option value='ghost'>Ghost</option>
+            {[
+              'Default',
+              'Primary',
+              'Secondary',
+              'Success',
+              'Warning',
+              'Error'
+            ].map((variant) => (
+              <option value={variant.toLowerCase()} key={variant}>
+                {variant}
+              </option>
+            ))}
           </select>
         </div>
         <div

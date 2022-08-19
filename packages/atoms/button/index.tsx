@@ -5,7 +5,7 @@ import LoadingSpinner from '../loading-spinner';
 
 export type ButtonProps = {
   children: ReactNode;
-  variant?:
+  appearance?:
     | 'default'
     | 'primary'
     | 'secondary'
@@ -13,14 +13,14 @@ export type ButtonProps = {
     | 'warning'
     | 'error';
   size?: 'sm' | 'md' | 'lg';
-  appearance?: 'solid' | 'outline' | 'link' | 'ghost';
+  variant?: 'solid' | 'outline' | 'link' | 'ghost';
   loading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 function Button({
   children,
-  variant = 'default',
-  appearance = 'solid',
+  appearance = 'default',
+  variant = 'solid',
   size = 'md',
   loading,
   ...remProps
@@ -38,50 +38,50 @@ function Button({
     }
   }, [size]);
 
-  const buttonVariant = React.useMemo(() => {
-    const baseVariantStyles = 'focus:ring focus:ring-offset-2 text-default';
-
-    switch (variant) {
-      case 'primary':
-        return `${baseVariantStyles} bg-primary focus:ring-primary/75`;
-      case 'secondary':
-        return `${baseVariantStyles} bg-secondary focus:ring-secondary/75`;
-      case 'success':
-        return `${baseVariantStyles} bg-success focus:ring-success/75`;
-      case 'error':
-        return `${baseVariantStyles} bg-error focus:ring-error/75`;
-      case 'warning':
-        return `${baseVariantStyles} bg-warning focus:ring-warning/75`;
-      default:
-        return `${baseVariantStyles} bg-default text-primary focus:ring-default/75`;
-    }
-  }, [variant]);
-
   const buttonAppearance = React.useMemo(() => {
-    const currentButtonVariant = buttonVariant
-      .match(/bg-\S+\b/g)?.[0]
-      .split('-')[1];
-    const baseAppearanceStyles = `focus:ring-transparent focus:ring-offset-0 bg-transparent text-${currentButtonVariant}`;
+    const baseAppearanceStyles = 'focus:ring focus:ring-offset-2 text-default';
 
     switch (appearance) {
+      case 'primary':
+        return `${baseAppearanceStyles} bg-primary focus:ring-primary/75`;
+      case 'secondary':
+        return `${baseAppearanceStyles} bg-secondary focus:ring-secondary/75`;
+      case 'success':
+        return `${baseAppearanceStyles} bg-success focus:ring-success/75`;
+      case 'error':
+        return `${baseAppearanceStyles} bg-error focus:ring-error/75`;
+      case 'warning':
+        return `${baseAppearanceStyles} bg-warning focus:ring-warning/75`;
+      default:
+        return `${baseAppearanceStyles} bg-default text-primary focus:ring-default/75`;
+    }
+  }, [appearance]);
+
+  const buttonVariant = React.useMemo(() => {
+    const currentButtonAppearance = buttonAppearance
+      .match(/bg-\S+\b/g)?.[0]
+      .split('-')[1];
+    const baseVariantStyles = `focus:ring-transparent focus:ring-offset-0 bg-transparent text-${currentButtonAppearance}`;
+
+    switch (variant) {
       case 'solid':
         return `rounded-md shadow-sm transition-shadow duration-100 ease-in hover:shadow-md focus:shadow-md`;
       case 'outline':
-        return `${baseAppearanceStyles} rounded-md shadow-sm border border-${currentButtonVariant} border-[3px]`;
+        return `${baseVariantStyles} rounded-md shadow-sm border border-${currentButtonAppearance} border-[3px] py-[0.55rem]`;
       case 'link':
-        return `${baseAppearanceStyles} hover:underline focus:underline hover:underline-offset-1 focus:underline-offset-1`;
+        return `${baseVariantStyles} hover:underline focus:underline hover:underline-offset-1 focus:underline-offset-1`;
       case 'ghost':
-        return baseAppearanceStyles;
+        return baseVariantStyles;
     }
-  }, [appearance, buttonVariant]);
+  }, [variant, buttonAppearance]);
 
   return (
     <button
       className={tm(
         'text-center focus:outline-none',
         buttonSize,
-        buttonVariant,
         buttonAppearance,
+        buttonVariant,
         disabled &&
           'under cursor-not-allowed opacity-50 hover:no-underline hover:shadow-none',
         className,

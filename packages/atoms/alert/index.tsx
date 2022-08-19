@@ -162,7 +162,7 @@ function Alert({
       <span className='flex-1'>{children}</span>
       {dismissible ? (
         <Button
-          appearance='ghost'
+          variant='ghost'
           size='sm'
           className='rounded-full bg-transparent p-1 text-current shadow-none'
           onClick={dismissHandler}

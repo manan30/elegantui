@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        default: '#eaeaeb',
+        default: '#f9fafb',
         primary: '#1e6091',
         secondary: '#184e77',
         success: '#37be45',

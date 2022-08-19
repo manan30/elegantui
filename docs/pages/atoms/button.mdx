@@ -26,9 +26,9 @@ export default function App() {
 }
 ```
 
-### Variants
+### Appearances
 
-Button component is available in six variants.
+Button component is available in six appearances.
 
 <div
   style={{
@@ -39,11 +39,11 @@ Button component is available in six variants.
     overflowX: 'auto'
   }}
 >
-  <Button variant='primary'>Primary</Button>
-  <Button variant='secondary'>Secondary</Button>
-  <Button variant='error'>Error</Button>
-  <Button variant='warning'>Warning</Button>
-  <Button variant='success'>Success</Button>
+  <Button appearance='primary'>Primary</Button>
+  <Button appearance='secondary'>Secondary</Button>
+  <Button appearance='error'>Error</Button>
+  <Button appearance='warning'>Warning</Button>
+  <Button appearance='success'>Success</Button>
   <Button>Default</Button>
 </div>
 
@@ -53,7 +53,7 @@ import { Button } from '@elegantui/atoms';
 export default function App() {
   return (
     <Button
-      variant='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
+      appearance='primary' // 'default' | 'secondary' | 'success' | 'warning' | 'error'
     >
       Hello Friend
     </Button>
@@ -74,13 +74,13 @@ Button component is available in three sizes.
     overflowX: 'auto'
   }}
 >
-  <Button size='sm' variant='primary'>
+  <Button size='sm' appearance='primary'>
     Small
   </Button>
-  <Button size='md' variant='primary'>
+  <Button size='md' appearance='primary'>
     Medium
   </Button>
-  <Button size='lg' variant='primary'>
+  <Button size='lg' appearance='primary'>
     Large
   </Button>
 </div>
@@ -92,7 +92,7 @@ export default function App() {
   return (
     <Button
       size='sm' // 'md' | 'lg'
-      variant='primary'
+      appearance='primary'
     >
       Hello Friend
     </Button>
@@ -100,9 +100,9 @@ export default function App() {
 }
 ```
 
-### Appearance
+### Variants
 
-Button component is available in four appearances.
+Button component is available in four variants.
 
 <div
   style={{
@@ -113,16 +113,16 @@ Button component is available in four appearances.
     overflowX: 'auto'
   }}
 >
-  <Button variant='primary' appearance='solid'>
+  <Button appearance='primary' variant='solid'>
     Solid
   </Button>
-  <Button variant='primary' appearance='outline'>
+  <Button appearance='primary' variant='outline'>
     Outline
   </Button>
-  <Button variant='primary' appearance='link'>
+  <Button appearance='primary' variant='link'>
     Link
   </Button>
-  <Button variant='primary' appearance='ghost'>
+  <Button appearance='primary' variant='ghost'>
     Ghost
   </Button>
 </div>
@@ -134,8 +134,8 @@ export default function App() {
   return (
     <>
       <Button
-        variant='primary'
-        appearance='solid' // 'outline' | 'link' | 'ghost'
+        appearance='primary'
+        variant='solid' // 'outline' | 'link' | 'ghost'
       >
         Solid
       </Button>
@@ -157,10 +157,10 @@ Button component can be configured to have `loading` and `disabled` states by pa
     overflowX: 'auto'
   }}
 >
-  <Button variant='primary' style={{ marginTop: '1rem' }} loading>
+  <Button appearance='primary' style={{ marginTop: '1rem' }} loading>
     Loading
   </Button>
-  <Button variant='primary' style={{ marginTop: '1rem' }} disabled>
+  <Button appearance='primary' style={{ marginTop: '1rem' }} disabled>
     Disabled
   </Button>
 </div>
@@ -171,10 +171,10 @@ import { Button } from '@elegantui/atoms';
 export default function App() {
   return (
     <>
-      <Button variant='primary' style={{ marginTop: '1rem' }} loading>
+      <Button appearance='primary' style={{ marginTop: '1rem' }} loading>
         Loading
       </Button>
-      <Button variant='primary' style={{ marginTop: '1rem' }} disabled>
+      <Button appearance='primary' style={{ marginTop: '1rem' }} disabled>
         Disabled
       </Button>
     </>
@@ -216,9 +216,9 @@ export default function App() {
 
 | **Prop**       | **Values**                                                                                      | **Default** |
 | -------------- | ----------------------------------------------------------------------------------------------- | ----------- |
-| **variant**    | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
+| **appearance** | <code>default &#124; primary &#124; secondary &#124; error &#124; success &#124; warning</code> | `default`   |
 | **size**       | <code>sm &#124; md &#124; lg </code>                                                            | `md`        |
-| **appearance** | <code>solid &#124; outline &#124; link &#124; ghost </code>                                     | `solid`     |
+| **variant**    | <code>solid &#124; outline &#124; link &#124; ghost </code>                                     | `solid`     |
 | **disabled**   | <code>true &#124; false</code>                                                                  | `false`     |
 | **loading**    | <code>true &#124; false</code>                                                                  | `false`     |
 | **...rest**    | `React.ButtonHTMLAttributes<HTMLButtonElement>`                                                 | --          |

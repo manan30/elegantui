@@ -73,7 +73,7 @@ function Dialog({
                       {title}
                     </HUIDialog.Title>
                     <Button
-                      appearance='ghost'
+                      variant='ghost'
                       size='sm'
                       className='ml-auto'
                       onClick={dismissHandler}
