@@ -35,3 +35,10 @@ yarn-error.log*
 dist
 .tsbuildinfo
 .temp
+
+.DS_STORE
+.cache
+node_modules/
+dist/
+
+.vitebook/.temp
