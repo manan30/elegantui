@@ -16,6 +16,7 @@ export const __pageMeta: PageMeta = {
 function InputStory() {
   const [disabled, setDisabled] = useState(false);
   const [variant, setVariant] = useState<InputProps['variant']>('primary');
+  const [hideLabel, setHideLabel] = useState(false);
 
   return (
     <>
@@ -26,7 +27,7 @@ function InputStory() {
         disabled={disabled}
         onChange={eventCallback}
         variant={variant}
-        hideLabel
+        hideLabel={hideLabel}
       />
 
       <ControlsAddon>
@@ -37,6 +38,17 @@ function InputStory() {
             type='checkbox'
             checked={disabled}
             onChange={(e) => setDisabled(e.target.checked)}
+          />
+        </div>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}
+        >
+          <label>Hide Label</label>
+          <input
+            style={{ marginLeft: '0.5rem' }}
+            type='checkbox'
+            checked={hideLabel}
+            onChange={(e) => setHideLabel(e.target.checked)}
           />
         </div>
         <div

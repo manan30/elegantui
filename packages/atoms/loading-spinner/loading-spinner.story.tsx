@@ -12,7 +12,7 @@ export const __pageMeta: PageMeta = {
 function LoadingSpinnerStory() {
   const [size, setSize] = useState<LoadingSpinnerProps['size']>('md');
   const [appearance, setAppearance] =
-    useState<LoadingSpinnerProps['appearance']>('default');
+    useState<LoadingSpinnerProps['appearance']>('primary');
 
   return (
     <>

@@ -10,5 +10,5 @@ module.exports = {
     './packages/**/*.story.tsx',
     './.vitebook/App.tsx'
   ],
-  plugins: []
+  plugins: [require('@tailwindcss/forms')]
 };
